@@ -1,3 +1,5 @@
+package Enum
+
 enum class Tokens {
     OR,
     AND,
