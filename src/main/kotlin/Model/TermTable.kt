@@ -1,10 +1,7 @@
 package Model
 
-data class TermTable(val name: String) {
-
+class TermTable {
+// here will be a table ?
 }
 
-fun lol2(lol: String) {
-
-}
 

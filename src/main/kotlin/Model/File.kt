@@ -1,7 +1,8 @@
 package Model
 
-internal class File(fileName: String) {
-
+data class File(val fileName: String) {
+ // big string??
+    //
 }
 
 fun lol(name: String){
