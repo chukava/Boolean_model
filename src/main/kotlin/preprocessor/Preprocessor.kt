@@ -1,12 +1,11 @@
 package preprocessor
-import Model.File
 import Model.TermTable
 
 
 class Preprocessor {
     val termTable: TermTable = TermTable()
 
-    fun preprocess(file: File){
+    fun preprocess(fileName: String){
         // fill termTable with terms from File
     }
 }

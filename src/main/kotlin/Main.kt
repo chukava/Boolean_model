@@ -1,13 +1,17 @@
-import Model.File
 import preprocessor.Preprocessor
+import parser.Parser
 
 fun main(args: Array<String>) {
-    println("Hello World!")
 
     val preprocessor: Preprocessor = Preprocessor()
-    val file: File = File("data1.txt")
+    val fileName: String = "some fileName"
+    preprocessor.preprocess(fileName)
 
-    preprocessor.preprocess(file)
+
+    val parser: Parser = Parser()
+    val query: String = "some query"
+    parser.parse(query)
+
 }
 
 //1. Extrakce a preprocesing termů z dokumentů.
