@@ -3,14 +3,17 @@ import parser.Parser
 
 fun main(args: Array<String>) {
 
-    val preprocessor: Preprocessor = Preprocessor()
-    val fileName: String = "some fileName"
-    preprocessor.preprocess(fileName)
+    println("Preprocessing started.")
+    val preprocessor: Preprocessor = Preprocessor("stop_words_english")
+    preprocessor.preprocess("data") // from resources
+    println("Preprocessing finished.")
 
 
+    println("Parsing started.")
     val parser: Parser = Parser()
     val query: String = "some query"
     parser.parse(query)
+    println("Parsing finished.")
 
 }
 
