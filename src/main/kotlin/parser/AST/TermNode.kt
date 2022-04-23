@@ -2,8 +2,12 @@ package parser.AST
 
 import java.util.*
 
-class TermNode : Expression() {
-    private val term: String? = null
+class TermNode(term : String) : Expression() {
+    private val term: String
+
+    init{
+        this.term = term
+    }
 
     override fun evaluateExpression(): MutableSet<Int>? {
         TODO("Not yet implemented")
