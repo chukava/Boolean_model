@@ -17,8 +17,8 @@ fun main(args: Array<String>) {
 
 }
 
-//1. Extrakce a preprocesing termů z dokumentů.
+//1. Extrakce a preprocesing termů z dokumentů. - DONE.
+//2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam). - DONE
 
 
-//2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam).
 //3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.

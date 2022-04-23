@@ -24,7 +24,7 @@ class Preprocessor(stopWordsFile: String) {
         pipeline = StanfordCoreNLP(props)
     }
 
-    fun initStopWords(fileName: String) : List<String> {
+    private fun initStopWords(fileName: String) : List<String> {
         val list = MutableList(0) { "" }
         var line: String?
 
@@ -40,13 +40,15 @@ class Preprocessor(stopWordsFile: String) {
     fun preprocess(folderName: String){
         var pathToFile: URL?
         var fileId = 1
-        try {
-            pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data$fileId.txt")
-            preprocessFile(pathToFile.path, fileId)
-        }
-        catch (e: Exception){
-            println("error")
-            return
+        while (fileId < 3) {
+            try {
+                pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data$fileId.txt")
+                preprocessFile(pathToFile.path, fileId)
+            } catch (e: Exception) {
+                println("error")
+                return
+            }
+            ++fileId
         }
     }
 
@@ -58,9 +60,8 @@ class Preprocessor(stopWordsFile: String) {
 
         val tokens : List<CoreLabel> = file.get<List<CoreLabel>>(TokensAnnotation::class.java)
         for (token in tokens) {
-            val word = token.get(LemmaAnnotation::class.java)
-            if (!isAStopWord(word)) termTable.addTermByFile(word, fileId)
-            // controll for  , . and numbers
+            val word = simplifyTerm(token)
+            if (!isAStopWord(word)) termTable.addTermByFile(word.lowercase(), fileId)
         }
 
         termTable.printTable()
@@ -77,8 +78,12 @@ class Preprocessor(stopWordsFile: String) {
         return str.toString()
     }
 
+    private fun simplifyTerm(token: CoreLabel) : String = token.get(LemmaAnnotation::class.java)
 
-    private fun isAStopWord(word: String) : Boolean = stopWords.contains(word)
+    private fun isAStopWord(word: String) : Boolean {
+        return if (!word.matches(Regex("[A-Za-z]+"))) true
+        else stopWords.contains(word.lowercase())
+    }
 
 }
 
