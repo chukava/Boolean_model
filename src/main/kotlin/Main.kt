@@ -12,7 +12,11 @@ fun main(args: Array<String>) {
     println("Parsing started.")
     val parser: Parser = Parser()
     val query: String = "some query"
-    parser.parse(query)
+    try {
+        parser.parse(query)
+    } catch (e: Exception){
+        println(e.message)
+    }
     println("Parsing finished.")
 
 }
@@ -21,4 +25,6 @@ fun main(args: Array<String>) {
 //2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam). - DONE
 
 
-//3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.
+//3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser)
+//4. Frontend - Javascript (Angular/React?), Bootstrap
+//5. Hosting ?? no idea so far

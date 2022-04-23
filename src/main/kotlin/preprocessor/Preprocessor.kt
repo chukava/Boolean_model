@@ -1,5 +1,5 @@
 package preprocessor
-import Model.TermTable
+import model.TermTable
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
 import edu.stanford.nlp.ling.CoreLabel

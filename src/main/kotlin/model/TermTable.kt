@@ -1,7 +1,9 @@
-package Model
+package model
+
+import java.util.TreeSet
 
 class TermTable {
-    private val table: HashMap<String,MutableList<Int>> = HashMap()
+    private val table: HashMap<String,MutableSet<Int>> = HashMap()
     // TODO : replace List with set to have only unique values
 
     fun addTermByFile (term: String, fileId: Int) {
@@ -10,7 +12,7 @@ class TermTable {
     }
 
     private fun addTermToTable (term: String, fileId: Int) {
-        table[term] = MutableList(1) { fileId }
+        table[term] = mutableSetOf(fileId)
     }
 
     private fun addFileByTerm (term: String, fileId: Int) {
