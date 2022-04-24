@@ -3,10 +3,16 @@ package parser
 import lexer.EToken
 import lexer.Lexer
 import parser.AST.*
+import preprocessor.Preprocessor
 
-class Parser {
+class Parser(_preprocessor: Preprocessor) {
     private val lexer: Lexer = Lexer()
     private var currentToken: EToken = EToken.START
+    private val preprocessor: Preprocessor
+
+    init {
+        this.preprocessor = _preprocessor
+    }
 
 
     fun parse(query: String): Expression {
@@ -78,7 +84,7 @@ class Parser {
         if (currentToken == EToken.TERM_NODE) {    // term
             val nodeTerm = lexer.getCurrentTerm()
             currentToken = lexer.getToken()
-            return TermNode(nodeTerm)
+            return TermNode(nodeTerm, preprocessor.termTable.getFilesByTerm(nodeTerm))
         } else if (currentToken == EToken.LEFT_BRACKET) { // left bracket -> expression expected
             currentToken = lexer.getToken()
             val exp = exp()

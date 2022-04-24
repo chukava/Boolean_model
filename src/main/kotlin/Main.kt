@@ -1,17 +1,17 @@
 import preprocessor.Preprocessor
 import parser.Parser
 
-fun main(args: Array<String>) {
+fun main() {
 
     println("Preprocessing started.")
-    val preprocessor: Preprocessor = Preprocessor("stop_words_english")
+    val preprocessor = Preprocessor("stop_words_english")
     preprocessor.preprocess("data") // from resources
     println("Preprocessing finished.")
 
 
     println("Parsing started.")
-    val parser: Parser = Parser()
-    val query: String = "( defeat or department ) and chief"
+    val parser = Parser(preprocessor)
+    val query = "( defeat or department ) and chief"
     try {
         val exp = parser.parse(query)
         println(exp.toString())

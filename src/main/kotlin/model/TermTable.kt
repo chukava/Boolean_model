@@ -1,6 +1,5 @@
 package model
 
-import java.util.TreeSet
 
 class TermTable {
     private val table: HashMap<String, MutableSet<Int>> = HashMap()
@@ -21,7 +20,7 @@ class TermTable {
         }
     }
 
-    fun getFilesByTerm(term: String): Array<Int>? = table[term]?.toTypedArray()
+    fun getFilesByTerm(term: String): MutableSet<Int>? = table[term]
 
     fun printTable() {
         println("Printing table of terms.")

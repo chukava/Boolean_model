@@ -1,6 +1,5 @@
 package parser.AST
 
-import java.util.*
 
 class AndOperator(lo: Expression, ro: Expression) : Expression() {
     private val leftOperand: Expression

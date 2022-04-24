@@ -14,7 +14,7 @@ import java.util.*
 
 class Preprocessor(stopWordsFile: String) {
     private val stopWords: List<String>
-    private val termTable = TermTable()
+    val termTable = TermTable()
     private val pipeline: StanfordCoreNLP
 
     init {
