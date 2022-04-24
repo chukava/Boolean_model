@@ -1,3 +1,5 @@
+import io.ktor.client.*
+import io.ktor.client.engine.cio.*
 import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.server.application.*
@@ -18,15 +20,14 @@ private fun startServer(){
     val server = embeddedServer(Netty, 8080) {
         routing {
             get("boolean-model/result") {
-
                 call.respond(searchService.booleanSearch().toString())
             }
             get("sequence-search/result") {
-
-                call.respondText("Getting ids", ContentType.Text.Plain)
+                call.respondText("Not implemented yet", ContentType.Text.Plain)
             }
             post("boolean-model/query") {
                 var query = call.receive<String>();
+                println(query)
                 call.respond("Query accepted")
                 searchService.setQuery(query)
             }
@@ -34,8 +35,9 @@ private fun startServer(){
     }
 
     server.start(true)
-}
 
+
+}
 
 
 
@@ -48,3 +50,25 @@ private fun startServer(){
 //4. Frontend - Javascript (Angular/React?), Bootstrap
  //
 //5. Prepare data sets = s, m, l, xl databases.
+
+
+
+
+/* client tests: success
+        val client2 = HttpClient(CIO)
+        val response1: HttpResponse = client2.post("http://0.0.0.0:8080/boolean-model/query") {
+                contentType(ContentType.Application.Json)
+                setBody("voter and department")
+        }
+
+        println(response1.status)
+        println(response1.bodyAsText())
+
+
+
+        val client = HttpClient(CIO)
+        val response: HttpResponse = client.get("http://0.0.0.0:8080/boolean-model/result")
+        println(response.status)
+        println(response.bodyAsText())
+        client.close()
+ */
