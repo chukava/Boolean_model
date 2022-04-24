@@ -2,9 +2,14 @@ package parser.AST
 
 import java.util.*
 
-class OrOperator : Expression() {
-    private val leftOperand: Expression? = null
-    private val rightOperand: Expression? = null
+class OrOperator(lo : Expression, ro : Expression) : Expression() {
+    private val leftOperand: Expression
+    private val rightOperand: Expression
+
+    init {
+        leftOperand = lo
+        rightOperand = ro
+    }
 
     override fun evaluateExpression(): MutableSet<Int>? {
         TODO("Not yet implemented")

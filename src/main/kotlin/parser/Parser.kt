@@ -2,36 +2,25 @@ package parser
 
 import lexer.EToken
 import lexer.Lexer
-import parser.AST.BinaryOperator
-import parser.AST.Expression
-import parser.AST.TermNode
+import parser.AST.*
 
 class Parser {
-    private val lexer : Lexer = Lexer()
-    private var currentToken : EToken = EToken.START
-    private var terms : MutableList<Expression> = mutableListOf()
-    private var operators : MutableList<Expression> = mutableListOf()
-    private var ast : MutableList<Expression> = mutableListOf()
+    private val lexer: Lexer = Lexer()
+    private var currentToken: EToken = EToken.START
+    private var terms: MutableList<Expression> = mutableListOf()
+    private var operators: MutableList<Expression> = mutableListOf()
+    private var ast: MutableList<Expression> = mutableListOf()
 
 
-    fun parse (query: String) {
+    fun parse(query: String) {
         lexer.initQuery(query)
         currentToken = lexer.getToken()
 
-        if(currentToken == EToken.END_OF_QUERY || currentToken == EToken.OR_OPERATOR || currentToken == EToken.AND_OPERATOR || currentToken == EToken.RIGHT_BRACKET)
+        if (currentToken != EToken.START)
             throw Exception("Bad query!")
-
-        while (currentToken != EToken.END_OF_QUERY)
-
-        if(currentToken == EToken.TERM_NODE){
-            ast.add(TermNode(lexer.getCurrentTerm()))
-        } else if (currentToken == EToken.OR_OPERATOR || )
-
-//        while (currentToken != EToken.END_OF_QUERY)
 
         /*
         START        : TERM | NOT | (
-
         AFTER TERM   : OR   | AND | )   |
         AFTER OR/AND : TERM | (   | NOT |
         AFTER (      : TERM | NOT | (   |
@@ -41,85 +30,43 @@ class Parser {
 
     }
 
-    private fun start() {
-        currentToken = lexer.getToken()
-        when(currentToken) {
-            EToken.TERM_NODE     -> term()
-            EToken.NOT_OPERATOR  -> notOperator()
-            else -> throw Exception("Bad query!")
-        }
-    }
-
-    private fun leftBracket() {
-        currentToken = lexer.getToken()
-        when(currentToken){
-            EToken.LEFT_BRACKET  -> leftBracket()
-            EToken.NOT_OPERATOR  -> notOperator()
-            EToken.TERM_NODE     -> term()
-            EToken.RIGHT_BRACKET -> rightBracket()
-            else -> throw Exception("Bad query!")
-        }
-    }
-
-    private fun rightBracket() {
-        currentToken = lexer.getToken()
-        when(currentToken){
-            EToken.RIGHT_BRACKET -> rightBracket()
-            EToken.AND_OPERATOR  -> andOperator()
-            EToken.OR_OPERATOR   -> orOperator()
-            else -> throw Exception("Bad query!")
-        }
-    }
-
-    private fun term() {
-        // get right operand
-        currentToken = lexer.getToken()
-        when(currentToken){
-            EToken.RIGHT_BRACKET -> rightBracket()
-            EToken.AND_OPERATOR  -> andOperator()
-            EToken.OR_OPERATOR   -> orOperator()
-            else -> throw Exception("Bad query!")
-        }
-    }
-
-    private fun orOperator() {
-        // get right operand
-        currentToken = lexer.getToken()
-        when(currentToken) {
-            EToken.TERM_NODE     -> term()
-            EToken.RIGHT_BRACKET -> rightBracket()
-            EToken.NOT_OPERATOR  -> notOperator()
-            else -> throw Exception("Bad query!")
-        }
-    }
-
-    private fun andOperator() {
-        // get right operand
-        currentToken = lexer.getToken()
-        when(currentToken) {
-            EToken.TERM_NODE     -> term()
-            EToken.RIGHT_BRACKET -> rightBracket()
-            EToken.NOT_OPERATOR  -> notOperator()
-            else -> throw Exception("Bad query!")
-        }
-    }
-
-    private fun notOperator() {
+    private fun exp() : Expression {
         currentToken = lexer.getToken()
 
-        // get right operand
-        when(currentToken) {
-            EToken.TERM_NODE    -> term()
-            EToken.LEFT_BRACKET -> leftBracket()
-            else -> throw Exception("Bad query!")
-        }
+        if(currentToken != EToken.TERM_NODE || currentToken != EToken.LEFT_BRACKET || currentToken != EToken.NOT_OPERATOR)
+            throw Exception("Bad query!")
+
+        val exp = Term()
+
+        return Exp1(exp)
     }
 
-    private fun addBinaryNodeToAST() {
-        ast.add(BinaryOperator(ast.add(ast.last())))
-    }
+    /*
 
-    private fun addUnaryNodeToAST() {
+ from https://cs.stackexchange.com/questions/10558/grammar-for-describing-boolean-expressions-with-and-or-and-not
+
+ exp→term {OR term};
+ term→factor {AND factor};
+ factor→NOT factor;
+ factor→LPAREN exp RPAREN;
 
 
-    }
+ exp→term | exp1
+ exp1->{OR term} | e
+ term→factor | term1
+ term1->{AND factor} | e
+ factor→NOT factor | factor1
+ factor1→ exp | e
+
+ exp  -> term | OR term (exp1)
+ exp1 -> e | term | exp1
+ term -> factor | AND factor (term1)
+ term1 -> e | factor | And factor (term1)
+ factor -> Not term(factor1) | factor1
+ factor1 -> e | exp
+
+
+*/
+
+
+}

@@ -2,8 +2,13 @@ package parser.AST
 
 import java.util.*
 
-class NotOperator : Expression(){
-    private val expression: Expression? = null
+class NotOperator(op : Expression) : Expression(){
+    private val operand: Expression
+
+    init {
+        operand = op
+    }
+
 
     override fun evaluateExpression(): MutableSet<Int>? {
         TODO("Not yet implemented")
