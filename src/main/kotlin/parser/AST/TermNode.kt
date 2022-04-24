@@ -1,17 +1,17 @@
 package parser.AST
 
 
-class TermNode(term: String, fileIds: MutableSet<Int>?) : Expression() {
+class TermNode(term: String, fileIdsByTerm: MutableSet<Int>?, fileIds: MutableSet<Int>?) : Expression(fileIds) {
     private val term: String
-    private var fileIds: MutableSet<Int> = mutableSetOf()
+    private var fileIdsByTerm: MutableSet<Int>? = mutableSetOf()
 
     init {
         this.term = term
-        if (fileIds != null) this.fileIds = fileIds
+        if (fileIdsByTerm != null) this.fileIdsByTerm = fileIdsByTerm
     }
 
-    override fun evaluateExpression(): MutableSet<Int>? {
-        TODO("Not yet implemented")
+    override fun evaluate(): MutableSet<Int>? {
+        return fileIds
     }
 
 }

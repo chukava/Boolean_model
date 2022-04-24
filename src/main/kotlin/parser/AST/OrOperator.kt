@@ -1,7 +1,7 @@
 package parser.AST
 
 
-class OrOperator(lo: Expression, ro: Expression) : Expression() {
+class OrOperator(lo: Expression, ro: Expression, fileIds: MutableSet<Int>?) : Expression(fileIds) {
     private val leftOperand: Expression
     private val rightOperand: Expression
 
@@ -10,8 +10,14 @@ class OrOperator(lo: Expression, ro: Expression) : Expression() {
         rightOperand = ro
     }
 
-    override fun evaluateExpression(): MutableSet<Int>? {
-        TODO("Not yet implemented")
-    }
+    override fun evaluate(): MutableSet<Int>? {
+        val leftIds = leftOperand.evaluate()
+        val rightIds = rightOperand.evaluate()
+
+        if(leftIds == null) return rightIds
+        else if(rightIds == null) return leftIds
+
+        leftIds.retainAll(rightIds)
+        return leftIds    }
 
 }

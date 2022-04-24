@@ -15,7 +15,9 @@ import java.util.*
 class Preprocessor(stopWordsFile: String) {
     private val stopWords: List<String>
     val termTable = TermTable()
+    var fileIds : MutableSet<Int> = mutableSetOf()
     private val pipeline: StanfordCoreNLP
+
 
     init {
         stopWords = initStopWords(stopWordsFile)
@@ -51,6 +53,10 @@ class Preprocessor(stopWordsFile: String) {
             }
             ++fileId
         }
+        --fileId
+        fileIds = Array(fileId) { (it+1) }.toMutableSet()
+        println("lol")
+
     }
 
     private fun preprocessFile(pathToFile: String, fileId: Int) {

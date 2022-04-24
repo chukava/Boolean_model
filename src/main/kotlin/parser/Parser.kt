@@ -39,7 +39,7 @@ class Parser(_preprocessor: Preprocessor) {
 
         if (currentToken == EToken.OR_OPERATOR) {
             currentToken = lexer.getToken()
-            return OrOperator(leftOperand, exp1(term()))
+            return OrOperator(leftOperand, exp1(term()), preprocessor.fileIds)
         }
         throw Exception("Bad query!")
     }
@@ -60,7 +60,7 @@ class Parser(_preprocessor: Preprocessor) {
             return leftOperand
         else if (currentToken == EToken.AND_OPERATOR) { // right operand for and expected -> term / left bracket or not expected
             currentToken = lexer.getToken()
-            return AndOperator(leftOperand, term1(factor()))
+            return AndOperator(leftOperand, term1(factor()), preprocessor.fileIds)
         }
 
         throw Exception("Bad query!")
@@ -71,7 +71,7 @@ class Parser(_preprocessor: Preprocessor) {
 
         if (currentToken == EToken.NOT_OPERATOR) { // not -> left bracket | term node
             currentToken = lexer.getToken()
-            return NotOperator(factor1())
+            return NotOperator(factor1(), preprocessor.fileIds)
         } else if (currentToken == EToken.TERM_NODE || currentToken == EToken.LEFT_BRACKET) //  left bracket | term node expected
             return factor1()
 
@@ -84,7 +84,7 @@ class Parser(_preprocessor: Preprocessor) {
         if (currentToken == EToken.TERM_NODE) {    // term
             val nodeTerm = lexer.getCurrentTerm()
             currentToken = lexer.getToken()
-            return TermNode(nodeTerm, preprocessor.termTable.getFilesByTerm(nodeTerm))
+            return TermNode(nodeTerm, preprocessor.termTable.getFilesByTerm(nodeTerm), preprocessor.fileIds)
         } else if (currentToken == EToken.LEFT_BRACKET) { // left bracket -> expression expected
             currentToken = lexer.getToken()
             val exp = exp()

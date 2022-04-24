@@ -11,10 +11,13 @@ fun main() {
 
     println("Parsing started.")
     val parser = Parser(preprocessor)
-    val query = "( defeat or department ) and chief"
+    val query = "( defeat or department ) and people"
+
     try {
-        val exp = parser.parse(query)
-        println(exp.toString())
+
+        val expression = parser.parse(query)
+        println(expression.evaluate())
+
     } catch (e: Exception) {
         println(e.message)
     }
@@ -24,8 +27,7 @@ fun main() {
 
 //1. Extrakce a preprocesing termů z dokumentů. - DONE.
 //2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam). - DONE
+//3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser) - DONE
 
-
-//3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser)
 //4. Frontend - Javascript (Angular/React?), Bootstrap
 //5. Hosting ?? no idea so far

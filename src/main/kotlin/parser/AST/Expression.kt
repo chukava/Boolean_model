@@ -1,8 +1,12 @@
 package parser.AST
 
 
-abstract class Expression {
+abstract class Expression(fileIds: MutableSet<Int>?) {
+    val fileIds : MutableSet<Int>?
 
-    abstract fun evaluateExpression(): MutableSet<Int>?
+    init {
+        this.fileIds = fileIds
+    }
 
+    abstract fun evaluate(): MutableSet<Int>?
 }
