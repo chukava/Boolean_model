@@ -17,7 +17,7 @@ class AndOperator(lo: Expression, ro: Expression, fileIds: MutableSet<Int>?) : E
         if(leftIds == null) return rightIds
         else if(rightIds == null) return leftIds
 
-        leftIds.addAll(rightIds)
+        leftIds.retainAll(rightIds)
         return leftIds
     }
 

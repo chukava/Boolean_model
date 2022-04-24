@@ -17,7 +17,7 @@ class OrOperator(lo: Expression, ro: Expression, fileIds: MutableSet<Int>?) : Ex
         if(leftIds == null) return rightIds
         else if(rightIds == null) return leftIds
 
-        leftIds.retainAll(rightIds)
+        leftIds.addAll(rightIds)
         return leftIds    }
 
 }

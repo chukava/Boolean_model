@@ -11,7 +11,7 @@ class TermNode(term: String, fileIdsByTerm: MutableSet<Int>?, fileIds: MutableSe
     }
 
     override fun evaluate(): MutableSet<Int>? {
-        return fileIds
+        return fileIdsByTerm
     }
 
 }
