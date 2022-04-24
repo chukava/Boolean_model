@@ -1,5 +1,4 @@
 import io.ktor.http.*
-import io.ktor.http.content.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
@@ -35,7 +34,8 @@ fun Application.configureRouting() {
 
     routing {
         get("boolean-model/result") {
-            call.respond(searchService.booleanSearch().toString())
+            val res = searchService.booleanSearch()
+            call.respond(res)
         }
         get("sequence-search/result") {
             call.respondText("Not implemented yet", ContentType.Text.Plain)

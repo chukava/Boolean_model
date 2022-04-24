@@ -1,3 +1,4 @@
+import model.File
 import parser.Parser
 import preprocessor.Preprocessor
 
@@ -10,7 +11,7 @@ class SearchService {
         this.query = query
     }
 
-    fun booleanSearch() : MutableSet<Int>?{
+    fun booleanSearch() : MutableList<File>{
         println("Preprocessing started.")
 
         val preprocessor = Preprocessor("stop_words_english")
@@ -21,11 +22,19 @@ class SearchService {
         val parser = Parser(preprocessor)
 
         val expression = parser.parse(query)
-        println(expression.evaluate())
-
+        val res = expression.evaluate()
+        println(res.toString())
         println("Parsing finished.")
 
-        return expression.evaluate()
+        val result : MutableList<File> = mutableListOf()
+
+        if(res != null){
+            for (id in res){
+                result.add(File(id.toString()))
+            }
+        }
+
+        return result
     }
 
 //    fun sequenceSearch() : MutableSet<Int>? {
