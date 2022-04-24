@@ -30,4 +30,5 @@ fun main() {
 //3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser) - DONE
 
 //4. Frontend - Javascript (Angular/React?), Bootstrap
-//5. Hosting ?? no idea so far
+ //
+//5. Prepare data sets = s, m, l, xl databases.
