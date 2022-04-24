@@ -5,8 +5,8 @@ import java.util.*
 
 class Lexer {
 
-    private var tokens : Queue<String> = ArrayDeque()
-    private var currToken : String = String()
+    private var tokens: Queue<String> = ArrayDeque()
+    private var currToken: String = String()
 
     fun initQuery(query: String) {
         val tokens = StringTokenizer(query)
@@ -15,21 +15,21 @@ class Lexer {
         }
     }
 
-    fun getToken() : EToken {
+    fun getToken(): EToken {
         currToken = tokens.poll() ?: return EToken.END_OF_QUERY
         return when (currToken) {
-            "("  -> EToken.LEFT_BRACKET
-            ")"  -> EToken.RIGHT_BRACKET
+            "(" -> EToken.LEFT_BRACKET
+            ")" -> EToken.RIGHT_BRACKET
             else -> when (currToken.lowercase()) {
-                "or"  -> EToken.OR_OPERATOR
+                "or" -> EToken.OR_OPERATOR
                 "and" -> EToken.AND_OPERATOR
                 "not" -> EToken.NOT_OPERATOR
-                else  -> EToken.TERM_NODE
+                else -> EToken.TERM_NODE
             }
         }
         // TODO check for [A-Za-z] when returning a TERM_NODE
     }
 
-    fun getCurrentTerm() : String = currToken
+    fun getCurrentTerm(): String = currToken
 
 }

@@ -2,7 +2,7 @@ package parser.AST
 
 import java.util.*
 
-class NotOperator(op : Expression) : Expression(){
+class NotOperator(op: Expression) : Expression() {
     private val operand: Expression
 
     init {

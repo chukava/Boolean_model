@@ -1,4 +1,5 @@
 package preprocessor
+
 import model.TermTable
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
@@ -12,9 +13,9 @@ import java.util.*
 
 
 class Preprocessor(stopWordsFile: String) {
-    private val stopWords : List<String>
+    private val stopWords: List<String>
     private val termTable = TermTable()
-    private val pipeline : StanfordCoreNLP
+    private val pipeline: StanfordCoreNLP
 
     init {
         stopWords = initStopWords(stopWordsFile)
@@ -24,12 +25,12 @@ class Preprocessor(stopWordsFile: String) {
         pipeline = StanfordCoreNLP(props)
     }
 
-    private fun initStopWords(fileName: String) : List<String> {
+    private fun initStopWords(fileName: String): List<String> {
         val list = MutableList(0) { "" }
         var line: String?
 
-        val pathToStopWordsFile : URL? = Preprocessor::class.java.classLoader.getResource("$fileName.txt")
-        val file : BufferedReader? = BufferedReader(FileReader(pathToStopWordsFile?.path))
+        val pathToStopWordsFile: URL? = Preprocessor::class.java.classLoader.getResource("$fileName.txt")
+        val file: BufferedReader? = BufferedReader(FileReader(pathToStopWordsFile?.path))
 
         while (file?.readLine().also { line = it } != null)
             line?.let { list.add(it.trim { it <= ' ' }) }
@@ -37,7 +38,7 @@ class Preprocessor(stopWordsFile: String) {
         return list.toList()
     }
 
-    fun preprocess(folderName: String){
+    fun preprocess(folderName: String) {
         var pathToFile: URL?
         var fileId = 1
         while (fileId < 3) {
@@ -58,7 +59,7 @@ class Preprocessor(stopWordsFile: String) {
         val file = Annotation(fileToString(pathToFile))
         pipeline.annotate(file)
 
-        val tokens : List<CoreLabel> = file.get<List<CoreLabel>>(TokensAnnotation::class.java)
+        val tokens: List<CoreLabel> = file.get<List<CoreLabel>>(TokensAnnotation::class.java)
         for (token in tokens) {
             val word = simplifyTerm(token)
             if (!isAStopWord(word)) termTable.addTermByFile(word.lowercase(), fileId)
@@ -67,7 +68,7 @@ class Preprocessor(stopWordsFile: String) {
         termTable.printTable()
     }
 
-    private fun fileToString(fileName: String) : String {
+    private fun fileToString(fileName: String): String {
         val str = StringBuilder()
         val file = BufferedReader(FileReader(fileName))
         var line: String?
@@ -78,9 +79,9 @@ class Preprocessor(stopWordsFile: String) {
         return str.toString()
     }
 
-    private fun simplifyTerm(token: CoreLabel) : String = token.get(LemmaAnnotation::class.java)
+    private fun simplifyTerm(token: CoreLabel): String = token.get(LemmaAnnotation::class.java)
 
-    private fun isAStopWord(word: String) : Boolean {
+    private fun isAStopWord(word: String): Boolean {
         return if (!word.matches(Regex("[A-Za-z]+"))) true
         else stopWords.contains(word.lowercase())
     }

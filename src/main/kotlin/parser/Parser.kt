@@ -9,7 +9,7 @@ class Parser {
     private var currentToken: EToken = EToken.START
 
 
-    fun parse(query: String) : Expression {
+    fun parse(query: String): Expression {
         lexer.initQuery(query)
         currentToken = lexer.getToken()
 

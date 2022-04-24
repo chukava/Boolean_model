@@ -2,10 +2,10 @@ package parser.AST
 
 import java.util.*
 
-class TermNode(term : String) : Expression() {
+class TermNode(term: String) : Expression() {
     private val term: String
 
-    init{
+    init {
         this.term = term
     }
 

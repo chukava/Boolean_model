@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
     val query: String = "home"
     try {
         val exp = parser.parse(query)
-    } catch (e: Exception){
+    } catch (e: Exception) {
         println(e.message)
     }
     println("Parsing finished.")

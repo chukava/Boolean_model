@@ -2,7 +2,7 @@ package parser.AST
 
 import java.util.*
 
-class OrOperator(lo : Expression, ro : Expression) : Expression() {
+class OrOperator(lo: Expression, ro: Expression) : Expression() {
     private val leftOperand: Expression
     private val rightOperand: Expression
 
