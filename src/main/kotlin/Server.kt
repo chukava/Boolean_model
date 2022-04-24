@@ -1,10 +1,10 @@
-import io.ktor.client.*
-import io.ktor.client.engine.cio.*
 import io.ktor.http.*
 import io.ktor.http.content.*
+import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -15,28 +15,38 @@ fun main() {
 }
 
 private fun startServer(){
-    val searchService = SearchService()
 
-    val server = embeddedServer(Netty, 8080) {
-        routing {
-            get("boolean-model/result") {
-                call.respond(searchService.booleanSearch().toString())
-            }
-            get("sequence-search/result") {
-                call.respondText("Not implemented yet", ContentType.Text.Plain)
-            }
-            post("boolean-model/query") {
-                var query = call.receive<String>();
-                println(query)
-                call.respond("Query accepted")
-                searchService.setQuery(query)
-            }
-        }
+    val server = embeddedServer(Netty, 8080, host = "localhost") {
+        configureRouting()
+        configureSerialization()
     }
-
     server.start(true)
 
+}
 
+fun Application.configureSerialization() {
+    install(ContentNegotiation) {
+        json()
+    }
+}
+
+fun Application.configureRouting() {
+    val searchService = SearchService()
+
+    routing {
+        get("boolean-model/result") {
+            call.respond(searchService.booleanSearch().toString())
+        }
+        get("sequence-search/result") {
+            call.respondText("Not implemented yet", ContentType.Text.Plain)
+        }
+        post("boolean-model/query") {
+            var query = call.receive<String>();
+            println(query)
+            call.respond("Query accepted")
+            searchService.setQuery(query)
+        }
+    }
 }
 
 
