@@ -7,6 +7,7 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import model.Query
 
 
 fun main() {
@@ -41,8 +42,8 @@ fun Application.configureRouting() {
             call.respondText("Not implemented yet", ContentType.Text.Plain)
         }
         post("boolean-model/query") {
-            var query = call.receive<String>();
-            println(query)
+            var query = call.receive<Query>();
+            println(query.toString())
             call.respond("Query accepted")
             searchService.setQuery(query)
         }

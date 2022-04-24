@@ -1,4 +1,5 @@
 import model.File
+import model.Query
 import parser.Parser
 import preprocessor.Preprocessor
 
@@ -7,8 +8,8 @@ class SearchService {
     private val result: MutableSet<Int>? = mutableSetOf()
 
 
-    fun setQuery(query: String){
-        this.query = query
+    fun setQuery(newQuery: Query){
+        this.query = newQuery.query
     }
 
     fun booleanSearch() : MutableList<File>{
