@@ -11,9 +11,10 @@ fun main(args: Array<String>) {
 
     println("Parsing started.")
     val parser: Parser = Parser()
-    val query: String = "home"
+    val query: String = "( defeat or department ) and chief"
     try {
         val exp = parser.parse(query)
+        println(exp.toString())
     } catch (e: Exception) {
         println(e.message)
     }

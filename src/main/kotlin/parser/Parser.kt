@@ -19,7 +19,7 @@ class Parser {
 
     private fun exp(): Expression { // term , -> exp1
 
-        if (currentToken != EToken.TERM_NODE || currentToken != EToken.LEFT_BRACKET || currentToken != EToken.NOT_OPERATOR) {
+        if (currentToken == EToken.TERM_NODE || currentToken == EToken.LEFT_BRACKET || currentToken == EToken.NOT_OPERATOR) {
             val expression = term()
             return exp1(expression)
         }
@@ -81,7 +81,9 @@ class Parser {
             return TermNode(nodeTerm)
         } else if (currentToken == EToken.LEFT_BRACKET) { // left bracket -> expression expected
             currentToken = lexer.getToken()
-            return exp()
+            val exp = exp()
+            currentToken = lexer.getToken()
+            return exp
         }
 
         throw Exception("Bad query!")
