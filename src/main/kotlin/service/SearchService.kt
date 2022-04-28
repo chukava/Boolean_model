@@ -1,3 +1,5 @@
+package service
+
 import model.File
 import model.Query
 import parser.AST.Expression

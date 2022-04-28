@@ -7,6 +7,7 @@ import edu.stanford.nlp.ling.CoreLabel
 import edu.stanford.nlp.pipeline.Annotation
 import edu.stanford.nlp.pipeline.StanfordCoreNLP
 import model.File
+import model.FileTable
 import java.io.BufferedReader
 import java.io.FileReader
 import java.net.URL
@@ -19,6 +20,7 @@ class Preprocessor(stopWordsFile: String) {
 
     var fileIds : MutableSet<File> = mutableSetOf()
     val termTable = TermTable()
+    val fileTable = FileTable()
 
 
     init {
@@ -67,12 +69,16 @@ class Preprocessor(stopWordsFile: String) {
         println("Processing file: $pathToFile")
 
         val file = Annotation(fileToString(pathToFile))
+        fileTable.addFile(fileId)
         pipeline.annotate(file)
 
         val tokens: List<CoreLabel> = file.get<List<CoreLabel>>(TokensAnnotation::class.java)
         for (token in tokens) {
             val word = simplifyTerm(token)
-            if (!isAStopWord(word)) termTable.addTermByFile(word.lowercase(), fileId)
+            if (!isAStopWord(word)){
+                termTable.addTermByFile(word.lowercase(), fileId)
+                fileTable.addTermByFile(fileId, word.lowercase())
+            }
         }
 
         termTable.printTable()
