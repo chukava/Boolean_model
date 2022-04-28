@@ -2,8 +2,7 @@ package model
 
 
 class TermTable {
-    private val table: HashMap<String, MutableSet<Int>> = HashMap()
-    // TODO : replace List with set to have only unique values
+    private val table: HashMap<String, MutableSet<File>> = HashMap()
 
     fun addTermByFile(term: String, fileId: Int) {
         if (table.containsKey(term)) addFileByTerm(term, fileId)
@@ -11,16 +10,16 @@ class TermTable {
     }
 
     private fun addTermToTable(term: String, fileId: Int) {
-        table[term] = mutableSetOf(fileId)
+        table[term] = mutableSetOf(File(fileId))
     }
 
     private fun addFileByTerm(term: String, fileId: Int) {
-        if (!table[term]!!.contains(fileId)) {
-            table[term]!!.add(fileId)
+        if (!table[term]!!.contains(File(fileId))) {
+            table[term]!!.add(File(fileId))
         }
     }
 
-    fun getFilesByTerm(term: String): MutableSet<Int>? = table[term]
+    fun getFilesByTerm(term: String): MutableSet<File>? = table[term]
 
     fun printTable() {
         println("Printing table of terms.")

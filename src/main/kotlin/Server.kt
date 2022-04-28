@@ -1,9 +1,11 @@
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
+import io.ktor.serialization.kotlinx.xml.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.cors.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -19,6 +21,7 @@ private fun startServer(){
     val server = embeddedServer(Netty, 8080, host = "localhost") {
         configureRouting()
         configureSerialization()
+        configureCors()
     }
     server.start(true)
 
@@ -27,25 +30,34 @@ private fun startServer(){
 fun Application.configureSerialization() {
     install(ContentNegotiation) {
         json()
+        xml()
     }
 }
+
+fun Application.configureCors() {
+    install(CORS) {
+        allowCredentials = true
+        anyHost()
+        allowHeader(HttpHeaders.ContentType)
+    }
+}
+
 
 fun Application.configureRouting() {
     val searchService = SearchService()
 
     routing {
+        post("/saveQuery") {
+            var query = call.receive<Query>();
+
+            if(searchService.setQuery(query)) call.respond("Query accepted.")
+            else call.respond("Bad query syntax.")
+        }
         get("boolean-model/result") {
-            val res = searchService.booleanSearch()
-            call.respond(res)
+            call.respond(searchService.booleanSearch())
         }
         get("sequence-search/result") {
-            call.respondText("Not implemented yet", ContentType.Text.Plain)
-        }
-        post("boolean-model/query") {
-            var query = call.receive<Query>();
-            println(query.toString())
-            call.respond("Query accepted")
-            searchService.setQuery(query)
+            call.respond(searchService.sequenceSearch())
         }
     }
 }

@@ -6,5 +6,9 @@ POST http://localhost:8080/boolean-model/query
 Content-Type: application/json
 
 {
-  "query": "chief"
+  "query": "voter"
 }
+
+###
+GET https://jsonplaceholder.typicode.com/users
+Accept: application/xml

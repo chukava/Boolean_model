@@ -30,7 +30,7 @@ class Parser(_preprocessor: Preprocessor) {
             return exp1(expression)
         }
 
-        throw Exception("Bad query!")
+        throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
     private fun exp1(leftOperand: Expression): Expression { // OR term | e
@@ -41,7 +41,7 @@ class Parser(_preprocessor: Preprocessor) {
             currentToken = lexer.getToken()
             return OrOperator(leftOperand, exp1(term()), preprocessor.fileIds)
         }
-        throw Exception("Bad query!")
+        throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
 
@@ -51,7 +51,7 @@ class Parser(_preprocessor: Preprocessor) {
             return term1(expression)
         }
 
-        throw Exception("Bad query!")
+        throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
     private fun term1(leftOperand: Expression): Expression { // and | e
@@ -63,7 +63,7 @@ class Parser(_preprocessor: Preprocessor) {
             return AndOperator(leftOperand, term1(factor()), preprocessor.fileIds)
         }
 
-        throw Exception("Bad query!")
+        throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
 
@@ -75,7 +75,7 @@ class Parser(_preprocessor: Preprocessor) {
         } else if (currentToken == EToken.TERM_NODE || currentToken == EToken.LEFT_BRACKET) //  left bracket | term node expected
             return factor1()
 
-        throw Exception("Bad query!")
+        throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
 
@@ -92,7 +92,7 @@ class Parser(_preprocessor: Preprocessor) {
             return exp
         }
 
-        throw Exception("Bad query!")
+        throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
 }

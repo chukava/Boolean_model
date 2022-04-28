@@ -1,7 +1,5 @@
 package lexer
-
 import java.util.*
-
 
 class Lexer {
 
@@ -27,7 +25,6 @@ class Lexer {
                 else -> EToken.TERM_NODE
             }
         }
-        // TODO check for [A-Za-z] when returning a TERM_NODE
     }
 
     fun getCurrentTerm(): String = currToken

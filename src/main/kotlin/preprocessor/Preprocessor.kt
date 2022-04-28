@@ -6,6 +6,7 @@ import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
 import edu.stanford.nlp.ling.CoreLabel
 import edu.stanford.nlp.pipeline.Annotation
 import edu.stanford.nlp.pipeline.StanfordCoreNLP
+import model.File
 import java.io.BufferedReader
 import java.io.FileReader
 import java.net.URL
@@ -14,9 +15,10 @@ import java.util.*
 
 class Preprocessor(stopWordsFile: String) {
     private val stopWords: List<String>
-    val termTable = TermTable()
-    var fileIds : MutableSet<Int> = mutableSetOf()
     private val pipeline: StanfordCoreNLP
+
+    var fileIds : MutableSet<File> = mutableSetOf()
+    val termTable = TermTable()
 
 
     init {
@@ -26,6 +28,7 @@ class Preprocessor(stopWordsFile: String) {
         props["annotators"] = "tokenize, ssplit, pos, lemma"
         pipeline = StanfordCoreNLP(props)
     }
+
 
     private fun initStopWords(fileName: String): List<String> {
         val list = MutableList(0) { "" }
@@ -40,6 +43,7 @@ class Preprocessor(stopWordsFile: String) {
         return list.toList()
     }
 
+
     fun preprocess(folderName: String) {
         var pathToFile: URL?
         var fileId = 1
@@ -47,17 +51,17 @@ class Preprocessor(stopWordsFile: String) {
             try {
                 pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data$fileId.txt")
                 preprocessFile(pathToFile.path, fileId)
+
+                fileIds.add(File(fileId))
+
             } catch (e: Exception) {
                 println("error")
                 return
             }
             ++fileId
         }
-        --fileId
-        fileIds = Array(fileId) { (it+1) }.toMutableSet()
-        println("lol")
-
     }
+
 
     private fun preprocessFile(pathToFile: String, fileId: Int) {
         println("Processing file: $pathToFile")
@@ -74,6 +78,7 @@ class Preprocessor(stopWordsFile: String) {
         termTable.printTable()
     }
 
+
     private fun fileToString(fileName: String): String {
         val str = StringBuilder()
         val file = BufferedReader(FileReader(fileName))
@@ -85,7 +90,9 @@ class Preprocessor(stopWordsFile: String) {
         return str.toString()
     }
 
+
     private fun simplifyTerm(token: CoreLabel): String = token.get(LemmaAnnotation::class.java)
+
 
     private fun isAStopWord(word: String): Boolean {
         return if (!word.matches(Regex("[A-Za-z]+"))) true
