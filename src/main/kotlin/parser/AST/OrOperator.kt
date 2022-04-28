@@ -16,10 +16,22 @@ class OrOperator(lo: Expression, ro: Expression, fileIds: MutableSet<File>?) : E
         val leftIds = leftOperand.evaluateBoolean()
         val rightIds = rightOperand.evaluateBoolean()
 
-        if(leftIds == null) return rightIds
-        else if(rightIds == null) return leftIds
+        if (leftIds == null) return rightIds
+        else if (rightIds == null) return leftIds
 
         leftIds.addAll(rightIds)
-        return leftIds    }
+        return leftIds
+    }
+
+    override fun evaluateSequence(): MutableSet<File>? {
+        val leftIds = leftOperand.evaluateBoolean()
+        val rightIds = rightOperand.evaluateBoolean()
+
+        if (leftIds == null) return rightIds
+        else if (rightIds == null) return leftIds
+
+        leftIds.addAll(rightIds)
+        return leftIds
+    }
 
 }

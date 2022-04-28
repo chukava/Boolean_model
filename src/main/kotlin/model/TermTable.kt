@@ -22,15 +22,11 @@ class TermTable {
     fun getFilesByTerm(term: String): MutableSet<File>? = table[term]
 
     fun printTable() {
-        println("Printing table of terms.")
-        for (row in table) {
-            print(row.key)
-            print("   =   ")
-            for (a in row.value) {
-                print(a)
-                print(", ")
-            }
-            println()
+        println("[INFO] Printing table of terms.")
+        table.forEach { (key, value) ->
+            print("$key " + " ".repeat(20 - key.length) + "|     ")
+            value.forEach { file -> print("[${file.fileId}]") }
+            print("\n")
         }
     }
 

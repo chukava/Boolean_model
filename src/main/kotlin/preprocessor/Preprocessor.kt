@@ -18,7 +18,7 @@ class Preprocessor(stopWordsFile: String) {
     private val stopWords: List<String>
     private val pipeline: StanfordCoreNLP
 
-    var fileIds : MutableSet<File> = mutableSetOf()
+    var fileIds: MutableSet<File> = mutableSetOf()
     val termTable = TermTable()
     val fileTable = FileTable()
 
@@ -62,11 +62,12 @@ class Preprocessor(stopWordsFile: String) {
             }
             ++fileId
         }
+        termTable.printTable()
     }
 
 
     private fun preprocessFile(pathToFile: String, fileId: Int) {
-        println("Processing file: $pathToFile")
+        println("[INFO] Processing file: $pathToFile")
 
         val file = Annotation(fileToString(pathToFile))
         fileTable.addFile(fileId)
@@ -75,13 +76,11 @@ class Preprocessor(stopWordsFile: String) {
         val tokens: List<CoreLabel> = file.get<List<CoreLabel>>(TokensAnnotation::class.java)
         for (token in tokens) {
             val word = simplifyTerm(token)
-            if (!isAStopWord(word)){
+            if (!isAStopWord(word)) {
                 termTable.addTermByFile(word.lowercase(), fileId)
                 fileTable.addTermByFile(fileId, word.lowercase())
             }
         }
-
-        termTable.printTable()
     }
 
 

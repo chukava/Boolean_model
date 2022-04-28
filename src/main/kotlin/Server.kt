@@ -17,7 +17,7 @@ fun main() {
     startServer()
 }
 
-private fun startServer(){
+private fun startServer() {
 
     val server = embeddedServer(Netty, 8080, host = "localhost") {
         configureRouting()
@@ -51,20 +51,17 @@ fun Application.configureRouting() {
         post("/saveQuery") {
             var query = call.receive<Query>();
 
-            if(searchService.setQuery(query)) call.respond("Query accepted.")
+            if (searchService.setQuery(query)) call.respond("Query accepted.")
             else call.respond("Bad query syntax.")
         }
-        get("boolean-model/result") {
+        get("boolean-model/getResult") {
             call.respond(searchService.booleanSearch())
         }
-        get("sequence-search/result") {
+        get("sequence-search/getResult") {
             call.respond(searchService.sequenceSearch())
         }
     }
 }
-
-
-
 
 
 //1. Extrakce a preprocesing termů z dokumentů. - DONE.
@@ -72,10 +69,8 @@ fun Application.configureRouting() {
 //3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser) - DONE
 
 //4. Frontend - Javascript (Angular/React?), Bootstrap
- //
+//
 //5. Prepare data sets = s, m, l, xl databases.
-
-
 
 
 /* client tests: success

@@ -9,7 +9,7 @@ import preprocessor.Preprocessor
 class SearchService {
     private val preprocessor: Preprocessor
     private val parser: Parser
-    private var query: String = "home"
+    private var query: String = "flu and spanish or interior"
     private var expression: Expression
 
 
@@ -30,9 +30,9 @@ class SearchService {
         this.query = newQuery.query
 
         try {
-            println("[INFO] Validating query $query started.")
+            println("[INFO] Validation of query $query started.")
             expression = parser.parse(this.query)
-            println("[INFO] Validating query finished.")
+            println("[INFO] Validation of query finished.")
 
         } catch (e: Exception) {
             println("[ERROR] ${e.message}")
@@ -43,9 +43,9 @@ class SearchService {
 
 
     fun booleanSearch(): MutableSet<File> {
-        println("[INFO] Evaluating of \"$query\" using inverted indexes started.")
+        println("[INFO] Evaluation of \"$query\" using inverted indexes started.")
         val result = expression.evaluateBoolean()
-        println("[INFO] Evaluating finished")
+        println("[INFO] Evaluation finished")
 
         if (result == null) return mutableSetOf()
         return result
@@ -53,9 +53,9 @@ class SearchService {
 
 
     fun sequenceSearch(): MutableSet<File> {
-        println("[INFO] Evaluating of \"$query\" using sequence search started.")
+        println("[INFO] Evaluation of \"$query\" using sequence search started.")
         val result = expression.evaluateSequence()
-        println("[INFO] Evaluating finished")
+        println("[INFO] Evaluation finished")
 
         if (result == null) return mutableSetOf()
         return result

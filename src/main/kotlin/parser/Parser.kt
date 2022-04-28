@@ -33,6 +33,7 @@ class Parser(_preprocessor: Preprocessor) {
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
+
     private fun exp1(leftOperand: Expression): Expression { // OR term | e
         if (currentToken == EToken.END_OF_QUERY || currentToken == EToken.RIGHT_BRACKET)
             return leftOperand
@@ -54,8 +55,8 @@ class Parser(_preprocessor: Preprocessor) {
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
-    private fun term1(leftOperand: Expression): Expression { // and | e
 
+    private fun term1(leftOperand: Expression): Expression { // and | e
         if (currentToken == EToken.END_OF_QUERY || currentToken == EToken.OR_OPERATOR || currentToken == EToken.RIGHT_BRACKET) // e
             return leftOperand
         else if (currentToken == EToken.AND_OPERATOR) { // right operand for and expected -> term / left bracket or not expected
@@ -68,7 +69,6 @@ class Parser(_preprocessor: Preprocessor) {
 
 
     private fun factor(): Expression { // not & factor1 | factor1
-
         if (currentToken == EToken.NOT_OPERATOR) { // not -> left bracket | term node
             currentToken = lexer.getToken()
             return NotOperator(factor1(), preprocessor.fileIds)
@@ -80,11 +80,15 @@ class Parser(_preprocessor: Preprocessor) {
 
 
     private fun factor1(): Expression { // term | exp
-
         if (currentToken == EToken.TERM_NODE) {    // term
             val nodeTerm = lexer.getCurrentTerm()
             currentToken = lexer.getToken()
-            return TermNode(nodeTerm, preprocessor.termTable.getFilesByTerm(nodeTerm), preprocessor.fileIds)
+            return TermNode(
+                nodeTerm,
+                preprocessor.termTable.getFilesByTerm(nodeTerm),
+                preprocessor.fileIds,
+                preprocessor.fileTable
+            )
         } else if (currentToken == EToken.LEFT_BRACKET) { // left bracket -> expression expected
             currentToken = lexer.getToken()
             val exp = exp()

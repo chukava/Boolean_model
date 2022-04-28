@@ -4,7 +4,7 @@ import model.File
 
 
 abstract class Expression(fileIds: MutableSet<File>?) {
-    val fileIds : MutableSet<File>?
+    val fileIds: MutableSet<File>?
 
     init {
         this.fileIds = fileIds

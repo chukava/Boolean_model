@@ -1,4 +1,5 @@
 package lexer
+
 import java.util.*
 
 class Lexer {
