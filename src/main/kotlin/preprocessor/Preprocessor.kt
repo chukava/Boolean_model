@@ -22,7 +22,6 @@ class Preprocessor(stopWordsFile: String) {
     val termTable = TermTable()
     val fileTable = FileTable()
 
-
     init {
         stopWords = initStopWords(stopWordsFile)
 
@@ -30,7 +29,6 @@ class Preprocessor(stopWordsFile: String) {
         props["annotators"] = "tokenize, ssplit, pos, lemma"
         pipeline = StanfordCoreNLP(props)
     }
-
 
     private fun initStopWords(fileName: String): List<String> {
         val list = MutableList(0) { "" }
@@ -44,7 +42,6 @@ class Preprocessor(stopWordsFile: String) {
 
         return list.toList()
     }
-
 
     fun preprocess(folderName: String) {
         var pathToFile: URL?
@@ -65,7 +62,6 @@ class Preprocessor(stopWordsFile: String) {
         termTable.printTable()
     }
 
-
     private fun preprocessFile(pathToFile: String, fileId: Int) {
         println("[INFO] Processing file: $pathToFile")
 
@@ -83,7 +79,6 @@ class Preprocessor(stopWordsFile: String) {
         }
     }
 
-
     private fun fileToString(fileName: String): String {
         val str = StringBuilder()
         val file = BufferedReader(FileReader(fileName))
@@ -95,9 +90,7 @@ class Preprocessor(stopWordsFile: String) {
         return str.toString()
     }
 
-
     private fun simplifyTerm(token: CoreLabel): String = token.get(LemmaAnnotation::class.java)
-
 
     private fun isAStopWord(word: String): Boolean {
         return if (!word.matches(Regex("[A-Za-z]+"))) true

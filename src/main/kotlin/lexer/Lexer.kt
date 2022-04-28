@@ -3,7 +3,6 @@ package lexer
 import java.util.*
 
 class Lexer {
-
     private var tokens: Queue<String> = ArrayDeque()
     private var currToken: String = String()
 

@@ -4,15 +4,16 @@ import model.File
 import model.FileTable
 
 
-class TermNode(term: String,
-               fileIdsByTerm: MutableSet<File>?,
-               fileIds: MutableSet<File>?,
-               fileTable: FileTable) : Expression(fileIds) {
+class TermNode(
+    term: String,
+    fileIdsByTerm: MutableSet<File>?,
+    fileIds: MutableSet<File>?,
+    fileTable: FileTable
+) : Expression(fileIds) {
 
     private val term: String
     private var fileIdsByTerm: MutableSet<File> = mutableSetOf()
     private val fileTable: FileTable
-
 
     init {
         this.term = term
@@ -25,7 +26,7 @@ class TermNode(term: String,
     }
 
     override fun evaluateSequence(): MutableSet<File> {
-        val results : MutableSet<File> = mutableSetOf()
+        val results: MutableSet<File> = mutableSetOf()
         fileTable.table.forEach { (key, value) -> if (value.contains(term)) results.add(key) }
         return results
     }

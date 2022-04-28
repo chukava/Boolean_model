@@ -2,6 +2,7 @@ package service
 
 import model.File
 import model.Query
+import model.TimeDifference
 import parser.AST.Expression
 import parser.Parser
 import preprocessor.Preprocessor
@@ -11,7 +12,7 @@ class SearchService {
     private val parser: Parser
     private var query: String = "flu and spanish or interior"
     private var expression: Expression
-
+    private var time: TimeDifference = TimeDifference(0,0,0)
 
     init {
         println("[INFO] Preprocessing started.")
@@ -24,7 +25,6 @@ class SearchService {
         parser = Parser(preprocessor)
         expression = parser.parse(query)
     }
-
 
     fun setQuery(newQuery: Query): Boolean {
         this.query = newQuery.query
@@ -41,21 +41,34 @@ class SearchService {
         return true
     }
 
+    fun getTimeDiff(){
+        time.diff = time.timeSequence - time.timeBoolean
+    }
 
     fun booleanSearch(): MutableSet<File> {
+
         println("[INFO] Evaluation of \"$query\" using inverted indexes started.")
+
+        val begin = System.nanoTime()
         val result = expression.evaluateBoolean()
-        println("[INFO] Evaluation finished")
+        val end = System.nanoTime()
+
+        time.timeBoolean = end-begin
+        println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()
         return result
     }
 
-
     fun sequenceSearch(): MutableSet<File> {
         println("[INFO] Evaluation of \"$query\" using sequence search started.")
+
+        val begin = System.nanoTime()
         val result = expression.evaluateSequence()
-        println("[INFO] Evaluation finished")
+        val end = System.nanoTime()
+
+        time.timeBoolean = end-begin
+        println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()
         return result

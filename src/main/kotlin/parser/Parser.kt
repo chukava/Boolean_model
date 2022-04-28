@@ -14,7 +14,6 @@ class Parser(_preprocessor: Preprocessor) {
         this.preprocessor = _preprocessor
     }
 
-
     fun parse(query: String): Expression {
         lexer.initQuery(query)
         currentToken = lexer.getToken()
@@ -22,9 +21,7 @@ class Parser(_preprocessor: Preprocessor) {
         return exp()
     }
 
-
     private fun exp(): Expression { // term , -> exp1
-
         if (currentToken == EToken.TERM_NODE || currentToken == EToken.LEFT_BRACKET || currentToken == EToken.NOT_OPERATOR) {
             val expression = term()
             return exp1(expression)
@@ -32,7 +29,6 @@ class Parser(_preprocessor: Preprocessor) {
 
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
-
 
     private fun exp1(leftOperand: Expression): Expression { // OR term | e
         if (currentToken == EToken.END_OF_QUERY || currentToken == EToken.RIGHT_BRACKET)
@@ -42,9 +38,9 @@ class Parser(_preprocessor: Preprocessor) {
             currentToken = lexer.getToken()
             return OrOperator(leftOperand, exp1(term()), preprocessor.fileIds)
         }
+
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
-
 
     private fun term(): Expression { // factor , term1
         if (currentToken == EToken.TERM_NODE || currentToken == EToken.LEFT_BRACKET || currentToken == EToken.NOT_OPERATOR) {
@@ -54,7 +50,6 @@ class Parser(_preprocessor: Preprocessor) {
 
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
-
 
     private fun term1(leftOperand: Expression): Expression { // and | e
         if (currentToken == EToken.END_OF_QUERY || currentToken == EToken.OR_OPERATOR || currentToken == EToken.RIGHT_BRACKET) // e
@@ -67,7 +62,6 @@ class Parser(_preprocessor: Preprocessor) {
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
 
-
     private fun factor(): Expression { // not & factor1 | factor1
         if (currentToken == EToken.NOT_OPERATOR) { // not -> left bracket | term node
             currentToken = lexer.getToken()
@@ -77,7 +71,6 @@ class Parser(_preprocessor: Preprocessor) {
 
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
     }
-
 
     private fun factor1(): Expression { // term | exp
         if (currentToken == EToken.TERM_NODE) {    // term

@@ -12,20 +12,17 @@ import io.ktor.server.routing.*
 import model.Query
 import service.SearchService
 
-
 fun main() {
     startServer()
 }
 
 private fun startServer() {
-
     val server = embeddedServer(Netty, 8080, host = "localhost") {
         configureRouting()
         configureSerialization()
         configureCors()
     }
     server.start(true)
-
 }
 
 fun Application.configureSerialization() {
@@ -43,7 +40,6 @@ fun Application.configureCors() {
     }
 }
 
-
 fun Application.configureRouting() {
     val searchService = SearchService()
 
@@ -53,6 +49,9 @@ fun Application.configureRouting() {
 
             if (searchService.setQuery(query)) call.respond("Query accepted.")
             else call.respond("Bad query syntax.")
+        }
+        get("/getTimeDifference") {
+            call.respond(searchService.getTimeDiff())
         }
         get("boolean-model/getResult") {
             call.respond(searchService.booleanSearch())
@@ -67,10 +66,13 @@ fun Application.configureRouting() {
 //1. Extrakce a preprocesing termů z dokumentů. - DONE.
 //2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam). - DONE
 //3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser) - DONE
+//4. Sekvencni pruchod DONE
 
-//4. Frontend - Javascript (Angular/React?), Bootstrap
-//
-//5. Prepare data sets = s, m, l, xl databases.
+//5. DataSets for testing - s, m , l, xl
+//6. Frontend
+//7. Time comparing
+//8. Documentation
+
 
 
 /* client tests: success
