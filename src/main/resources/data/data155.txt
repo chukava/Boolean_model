@@ -1,0 +1,28 @@
+The study was conducted in ED at a tertiary care teaching hospital, which is also an institution of national importance under the Ministry of Health and Family Welfare, Government of India, located in Southern India. The ED included in the study caters only adult age group patients. There is a separate pediatric emergency in the facility which was not included in the present study. The ethical clearance for this study was obtained from the Institute Ethics Committee (IEC), which approved a waiver of informed consent. The study design was an interventional type of quality improvement study, conducted for a total duration of 1 year (November 19 to October 20), which was further divided into two phases of 6 months each: Preintervention phase and intervention phase. BC specimens collected from the patients clinically presenting with signs and symptoms suggestive of BSI and/or sepsis in the ED were included during the study period. This study comprised of two components: (i) development and implementation of a multimodal intervention for BC collection in ED, (ii) evaluation of the effectiveness of this intervention by assessing the reduction in the BC contamination rate and improvement in the compliance of the clinical team of the ED to the BC collection protocol and filling of the various parameters in the BC requisition form.[3]
+
+Preintervention phase.
+
+During the preintervention phase (November 19–April 20), a task force comprised of consultants (both microbiology and clinical), microbiology senior resident, and postgraduate students was formed for the development of a multimodal intervention. The task force studied the process of BC collection in the ED through direct observation of BC collection and also by conducting surveys and structured interviews of the HCWs involved in the collection. Subsequently, a fishbone diagram was drawn line listing the risk factors which contributed to a high BC contamination and irrational filling of requisition forms in ED [Figure 1].
+	Figure 1: Fishbone diagram depicting the risk factors which contributed to a high blood culture contamination and irrational filling of requisition form in emergency department
+
+
+
+It was observed that the nonuniformity of the protocol used for BC collection technique and lack of knowledge of staff involved in sample collection were the key risk factors and therefore chosen as the target of intervention. The BC specimens were collected by the intern doctors and emergency medicine technician (EMT) students, who were posted in ED on a weekly rotation. Samples were sent to the microbiology laboratory along with requisition forms raised online in laboratory information system (LIS). There was significant variation in the practice of BC collection. Some of the key defects identified in the collection process were – practice of one step decontamination, use of nonsterile gloves, inadequate contact time after applying disinfectant, applying a tourniquet, and palpating vein after applying the disinfectant and not cleaning the BC bottle cap with alcohol wipes before inserting the needle.
+
+Intervention phase.
+
+Guided by the fishbone diagram [Figure 1] depicting risk factors identified in the preintervention phase, a multimodal intervention was designed, which included the following:
+
+Standard protocol for blood culture collection
+
+A standard protocol for BC collection was developed. The key changes introduced were – two-step decontamination (70% alcohol, followed by 0.5% w/v chlorhexidine based antiseptics), use of sterile glove, adequate contact time (30 s to 1 min), after applying antiseptics, applying tourniquet, and palpating vein before applying the antiseptics and cleaning the BC bottle cap with alcohol wipes before inserting the needle.[14]
+
+Educational and training sessions.
+
+Educational and training sessions were conducted for the staff involved in BC collection such as intern doctors and technician students (“regular group”) posted in the ED. Training on standard protocol for BC collection and filling of requisition form was given through interactive sessions, posters, PowerPoint presentations, and video-graphic methods. The HCWs were also made aware of the importance of appropriate blood volume collected in each BC bottle (8–10 mL and 1–3 mL for adult and pediatric BC bottle respectively) and the culture of cultures (i.e., BC collection before start of antibiotics or before next dose of ongoing antibiotics).[15] Frequent sessions were conducted at regular intervals as the staff were posted on the rotation basis in ED.
+
+Dedicated phlebotomists.
+
+The studies in the existing literature depict that the BC contamination can drastically be reduced if trained phlebotomists are engaged in collection.[16],[1],[17] In our setting, the blood collection was performed by intern doctors and EMT students who were posted on a rotation basis in ED; which was found as one of the major detrimental factors for increased BC contamination. Due to a lack of resources, dedicated phlebotomists could not be posted in ED round the clock. However, as a part of the pilot intervention, the hospital administration approved to post a separate set of dedicated phlebotomists in ED for a limited period of time in a day during the intervention phase, who were exclusively trained on the BC collection protocol.
+
+Data collection and analysis.
