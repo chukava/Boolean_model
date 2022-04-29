@@ -41,8 +41,9 @@ class SearchService {
         return true
     }
 
-    fun getTimeDiff(){
+    fun getTimeDiff() : TimeDifference{
         time.diff = time.timeSequence - time.timeBoolean
+        return time
     }
 
     fun booleanSearch(): MutableSet<File> {
@@ -67,7 +68,7 @@ class SearchService {
         val result = expression.evaluateSequence()
         val end = System.nanoTime()
 
-        time.timeBoolean = end-begin
+        time.timeSequence = end-begin
         println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()

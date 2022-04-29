@@ -6,9 +6,14 @@ POST http://localhost:8080/saveQuery
 Content-Type: application/json
 
 {
-  "query": "flu and spanish or ( interior or prevent )"
+  "query": "category"
 }
 
 ###
 GET http://localhost:8080/sequence-search/getResult
+Accept: application/json
+
+
+###
+GET http://localhost:8080/getTimeDifference
 Accept: application/json

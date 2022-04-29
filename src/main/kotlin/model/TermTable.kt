@@ -25,6 +25,7 @@ class TermTable {
         println("[INFO] Printing table of terms.")
         table.forEach { (key, value) ->
             print("$key " + " ".repeat(20 - key.length) + "|     ")
+//            if(key.length > 20) println("\n".repeat(2) + key + "\n".repeat(2) + "{$value}")
             value.forEach { file -> print("[${file.fileId}]") }
             print("\n")
         }
