@@ -1,0 +1,31 @@
+###
+POST http://localhost:8080/saveQuery
+Content-Type: application/json
+
+{
+  "query": "category"
+}
+
+###
+GET http://localhost:8080/boolean-model/getResult-s
+Accept: application/json
+
+###
+GET http://localhost:8080/sequence-search/getResult-s
+Accept: application/json
+
+###
+GET http://localhost:8080/getTimeDifference-s
+Accept: application/json
+
+###
+GET http://localhost:8080/boolean-model/getResult-l
+Accept: application/json
+
+###
+GET http://localhost:8080/sequence-search/getResult-l
+Accept: application/json
+
+###
+GET http://localhost:8080/getTimeDifference-l
+Accept: application/json

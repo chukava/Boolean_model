@@ -41,23 +41,34 @@ fun Application.configureCors() {
 }
 
 fun Application.configureRouting() {
-    val searchService = SearchService()
+    val searchService_S = SearchService("data_S")
+    val searchService_L = SearchService("data_L")
+
 
     routing {
         post("/saveQuery") {
             var query = call.receive<Query>();
 
-            if (searchService.setQuery(query)) call.respond("Query accepted.")
+            if (searchService_S.setQuery(query) && searchService_L.setQuery(query)) call.respond("Query accepted.")
             else call.respond("Bad query syntax.")
         }
-        get("/getTimeDifference") {
-            call.respond(searchService.getTimeDiff())
+        get("/getTimeDifference-s") {
+            call.respond(searchService_S.getTimeDiff())
         }
-        get("boolean-model/getResult") {
-            call.respond(searchService.booleanSearch())
+        get("boolean-model/getResult-s") {
+            call.respond(searchService_S.booleanSearch())
         }
-        get("sequence-search/getResult") {
-            call.respond(searchService.sequenceSearch())
+        get("sequence-search/getResult-s") {
+            call.respond(searchService_S.sequenceSearch())
+        }
+        get("/getTimeDifference-l") {
+            call.respond(searchService_L.getTimeDiff())
+        }
+        get("boolean-model/getResult-l") {
+            call.respond(searchService_L.booleanSearch())
+        }
+        get("sequence-search/getResult-l") {
+            call.respond(searchService_L.sequenceSearch())
         }
     }
 }
@@ -67,11 +78,12 @@ fun Application.configureRouting() {
 //2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam). - DONE
 //3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser) - DONE
 //4. Sekvencni pruchod DONE
+//5. DataSets for testing - s, l - DONE
+//7. Time comparing - DONE
 
-//5. DataSets for testing - s, m , l, xl
 //6. Frontend
-//7. Time comparing
 //8. Documentation
+//9. Hosting? - no need!
 
 
 

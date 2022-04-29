@@ -7,7 +7,7 @@ import parser.AST.Expression
 import parser.Parser
 import preprocessor.Preprocessor
 
-class SearchService {
+class SearchService(dataSet: String) {
     private val preprocessor: Preprocessor
     private val parser: Parser
     private var query: String = "flu and spanish or interior"
@@ -17,8 +17,8 @@ class SearchService {
     init {
         println("[INFO] Preprocessing started.")
 
-        preprocessor = Preprocessor("stop_words_english")
-        preprocessor.preprocess("data_S") // from resources
+        preprocessor = Preprocessor("stop_words/stop_words_english")
+        preprocessor.preprocess(dataSet) // from resources
 
         println("[INFO] Preprocessing finished.")
 

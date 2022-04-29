@@ -46,9 +46,12 @@ class Preprocessor(stopWordsFile: String) {
     fun preprocess(folderName: String) {
         var pathToFile: URL?
         var fileId = 1
-        while (fileId < 151) {
+        val stopFiles = if (folderName == "data_S") 201 else 2001
+        val dataSetId = if (folderName == "data_S") "S" else "L"
+
+        while (fileId < stopFiles) {
             try {
-                pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data$fileId.txt")
+                pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data_$dataSetId$fileId.txt")
                 preprocessFile(pathToFile.path, fileId)
 
                 fileIds.add(File(fileId))
