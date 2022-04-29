@@ -1,0 +1,65 @@
+Technicism
+Generally, technicism is the belief in the utility of technology for improving human societies.[51] Taken to an extreme, technicism "reflects a fundamental attitude which seeks to control reality, to resolve all problems with the use of scientific–technological methods and tools."[52] In other words, human beings will someday be able to master all problems and possibly even control the future using technology. Some, such as Stephen V. Monsma,[53] connect these ideas to the abdication of religion as a higher moral authority.
+
+Optimism
+See also: Extropianism and Technological optimism
+Optimistic assumptions are made by proponents of ideologies such as transhumanism and singularitarianism, which view technological development as generally having beneficial effects for the society and the human condition. In these ideologies, technological development is morally good.
+
+Transhumanists generally believe that the point of technology is to overcome barriers, and that what we commonly refer to as the human condition is just another barrier to be surpassed.
+
+Singularitarians believe in some sort of "accelerating change"; that the rate of technological progress accelerates as we obtain more technology, and that this will culminate in a "Singularity" after artificial general intelligence is invented in which progress is nearly infinite; hence the term. Estimates for the date of this Singularity vary,[54] but prominent futurist Ray Kurzweil estimates the Singularity will occur in 2045.
+
+Kurzweil is also known for his history of the universe in six epochs: (1) the physical/chemical epoch, (2) the life epoch, (3) the human/brain epoch, (4) the technology epoch, (5) the artificial intelligence epoch, and (6) the universal colonization epoch. Going from one epoch to the next is a Singularity in its own right, and a period of speeding up precedes it. Each epoch takes a shorter time, which means the whole history of the universe is one giant Singularity event.[55]
+
+Some critics see these ideologies as examples of scientism and techno-utopianism and fear the notion of human enhancement and technological singularity which they support. Some have described Karl Marx as a techno-optimist.[56]
+
+Skepticism and critics
+See also: Luddite, Neo-Luddism, Anarcho-primitivism, and Bioconservatism
+Refer to caption
+Luddites smashing a power loom in 1812
+On the somewhat skeptical side are certain philosophers like Herbert Marcuse and John Zerzan, who believe that technological societies are inherently flawed. They suggest that the inevitable result of such a society is to become evermore technological at the cost of freedom and psychological health.
+
+Many, such as the Luddites and prominent philosopher Martin Heidegger, hold serious, although not entirely, deterministic reservations about technology (see "The Question Concerning Technology"[57]). According to Heidegger scholars Hubert Dreyfus and Charles Spinosa, "Heidegger does not oppose technology. He hopes to reveal the essence of technology in a way that 'in no way confines us to a stultified compulsion to push on blindly with technology or, what comes to the same thing, to rebel helplessly against it.' Indeed, he promises that 'when we once open ourselves expressly to the essence of technology, we find ourselves unexpectedly taken into a freeing claim.'[58] What this entails is a more complex relationship to technology than either techno-optimists or techno-pessimists tend to allow."[59]
+
+Some of the most poignant criticisms of technology are found in what are now considered to be dystopian literary classics such as Aldous Huxley's Brave New World, Anthony Burgess's A Clockwork Orange, and George Orwell's Nineteen Eighty-Four. In Goethe's Faust, Faust selling his soul to the devil in return for power over the physical world is also often interpreted as a metaphor for the adoption of industrial technology. More recently, modern works of science fiction such as those by Philip K. Dick and William Gibson and films such as Blade Runner and Ghost in the Shell project highly ambivalent or cautionary attitudes toward technology's impact on human society and identity.
+
+The late cultural critic Neil Postman distinguished tool-using societies from technological societies and from what he called "technopolies," societies that are dominated by the ideology of technological and scientific progress to the exclusion or harm of other cultural practices, values, and world-views.[60]
+
+Darin Barney has written about technology's impact on practices of citizenship and democratic culture, suggesting that technology can be construed as (1) an object of political debate, (2) a means or medium of discussion, and (3) a setting for democratic deliberation and citizenship. As a setting for democratic culture, Barney suggests that technology tends to make ethical questions, including the question of what a good life consists in, nearly impossible because they already give an answer to the question: a good life is one that includes the use of more and more technology.[61]
+
+Nikolas Kompridis has also written about the dangers of new technology, such as genetic engineering, nanotechnology, synthetic biology, and robotics. He warns that these technologies introduce unprecedented new challenges to human beings, including the possibility of the permanent alteration of our biological nature. These concerns are shared by other philosophers, scientists and public intellectuals who have written about similar issues (e.g. Francis Fukuyama, Jürgen Habermas, William Joy, and Michael Sandel).[62]
+
+Another prominent critic of technology is Hubert Dreyfus, who has published books such as On the Internet and What Computers Still Can't Do.
+
+A more infamous anti-technological treatise is Industrial Society and Its Future, written by the Unabomber Ted Kaczynski and printed in several major newspapers (and later books) as part of an effort to end his bombing campaign of the techno-industrial infrastructure. There are also subcultures that disapprove of some or most technology, such as self-identified off-gridders.[63]
+
+Appropriate technology
+See also: Technocriticism and Technorealism
+The notion of appropriate technology was developed in the 20th century by thinkers such as E.F. Schumacher and Jacques Ellul to describe situations where it was not desirable to use very new technologies or those that required access to some centralized infrastructure or parts or skills imported from elsewhere. The ecovillage movement emerged in part due to this concern.
+
+Optimism and skepticism in the 21st century
+This section mainly focuses on American concerns even if it can reasonably be generalized to other Western countries.
+
+The inadequate quantity and quality of American jobs is one of the most fundamental economic challenges we face. [...] What's the linkage between technology and this fundamental problem?
+
+— Bernstein, Jared, "It’s Not a Skills Gap That’s Holding Wages Down: It’s the Weak Economy, Among Other Things," in The American Prospect, October 2014
+In his article, Jared Bernstein, a Senior Fellow at the Center on Budget and Policy Priorities,[64] questions the widespread idea that automation, and more broadly, technological advances, have mainly contributed to this growing labor market problem. His thesis appears to be a third way between optimism and skepticism. Essentially, he stands for a neutral approach of the linkage between technology and American issues concerning unemployment and declining wages.
+
+He uses two main arguments to defend his point. First, because of recent technological advances, an increasing number of workers are losing their jobs. Yet, scientific evidence fails to clearly demonstrate that technology has displaced so many workers that it has created more problems than it has solved. Indeed, automation threatens repetitive jobs but higher-end jobs are still necessary because they complement technology and manual jobs that "requires flexibility judgment and common sense"[65] remain hard to replace with machines. Second, studies have not shown clear links between recent technology advances and the wage trends of the last decades.
+
+Therefore, according to Bernstein, instead of focusing on technology and its hypothetical influences on current American increasing unemployment and declining wages, one needs to worry more about "bad policy that fails to offset the imbalances in demand, trade, income, and opportunity."[65]
+
+In 2019 philosopher Nick Bostrom introduced the notion of a vulnerable world, "one in which there is some level of technological development at which civilization almost certainly gets devastated by default", citing the risks of a pandemic caused by a DIY biohacker, or an arms race triggered by the development of novel armaments.[66] He writes that "Technology policy should not unquestioningly assume that all technological progress is beneficial, or that complete scientific openness is always best, or that the world has the capacity to manage any potential downside of a technology after it is invented."[66]
+
+Complex technological systems
+
+The rear wheel of a bicycle
+
+The flame of a gas stove.
+Thomas P. Hughes stated that because technology has been considered as a key way to solve problems, we need to be aware of its complex and varied characters to use it more efficiently.[67] What is the difference between a wheel or a compass and cooking machines such as an oven or a gas stove? Can we consider all of them, only a part of them, or none of them as technologies?
+
+Technology is often considered too narrowly; according to Hughes, "Technology is a creative process involving human ingenuity".[68] This definition's emphasis on creativity avoids unbounded definitions that may mistakenly include cooking "technologies," but it also highlights the prominent role of humans and therefore their responsibilities for the use of complex technological systems.
+
+Yet, because technology is everywhere and has dramatically changed landscapes and societies, Hughes argues that engineers, scientists, and managers have often believed that they can use technology to shape the world as they want. They have often supposed that technology is easily controllable and this assumption has to be thoroughly questioned.[67] For instance, Evgeny Morozov particularly challenges two concepts: "Internet-centrism" and "solutionism."[69] Internet-centrism refers to the idea that our society is convinced that the Internet is one of the most stable and coherent forces. Solutionism is the ideology that every social issue can be solved thanks to technology and especially thanks to the internet. In fact, technology intrinsically contains uncertainties and limitations. According to Alexis Madrigal's review of Morozov's theory, to ignore it will lead to "unexpected consequences that could eventually cause more damage than the problems they seek to address."[70] Benjamin R. Cohen and Gwen Ottinger also discussed the multivalent effects of technology.[71]
+
+Therefore, recognition of the limitations of technology, and more broadly, scientific knowledge, is needed – especially in cases dealing with environmental justice and health issues. Ottinger continues this reasoning and argues that the ongoing recognition of the limitations of scientific knowledge goes hand in hand with scientists and engineers’ new comprehension of their role. Such an approach of technology and science "[require] technical professionals to conceive of their roles in the process differently. [They have to consider themselves as] collaborators in research and problem solving rather than simply providers of information and technical solutions."[72]

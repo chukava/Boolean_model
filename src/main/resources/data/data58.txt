@@ -1,0 +1,31 @@
+Structure
+All organisms consist of structural units called cells; some contain a single cell (unicellular) and others contain many units (multicellular). Multicellular organisms are able to specialize cells to perform specific functions. A group of such cells is a tissue, and in animals these occur as four basic types, namely epithelium, nervous tissue, muscle tissue, and connective tissue. Several types of tissue work together in the form of an organ to produce a particular function (such as the pumping of the blood by the heart, or as a barrier to the environment as the skin). This pattern continues to a higher level with several organs functioning as an organ system such as the reproductive system, and digestive system. Many multicellular organisms consist of several organ systems, which coordinate to allow for life.
+
+Cell
+The cell theory, first developed in 1839 by Schleiden and Schwann, states that all organisms are composed of one or more cells; all cells come from preexisting cells, and cells contain the hereditary information necessary for regulating cell functions and for transmitting information to the next generation of cells.
+
+There are two types of cells, eukaryotic and prokaryotic. Prokaryotic cells are usually singletons, while eukaryotic cells are usually found in multicellular organisms. Prokaryotic cells lack a nuclear membrane so DNA is unbound within the cell; eukaryotic cells have nuclear membranes.
+
+All cells, whether prokaryotic or eukaryotic, have a membrane, which envelops the cell, separates its interior from its environment, regulates what moves in and out, and maintains the electric potential of the cell. Inside the membrane, a salty cytoplasm takes up most of the cell volume. All cells possess DNA, the hereditary material of genes, and RNA, containing the information necessary to build various proteins such as enzymes, the cell's primary machinery. There are also other kinds of biomolecules in cells.
+
+All cells share several similar characteristics of:[32]
+
+Reproduction by cell division (binary fission, mitosis or meiosis).
+Use of enzymes and other proteins coded by DNA genes and made via messenger RNA intermediates and ribosomes.
+Metabolism, including taking in raw materials, building cell components, converting energy, molecules and releasing by-products. The functioning of a cell depends upon its ability to extract and use chemical energy stored in organic molecules. This energy is derived from metabolic pathways.
+Response to external and internal stimuli such as changes in temperature, pH or nutrient levels.
+Cell contents are contained within a cell surface membrane that contains proteins and a lipid bilayer.
+Evolutionary history
+See also: Origin of life, Earliest known life forms, and Common descent
+Last universal common ancestor
+
+Precambrian stromatolites in the Siyeh Formation, Glacier National Park. In 2002, a paper in the scientific journal Nature suggested that these 3.5 Gya (billion years old) geological formations contain fossilized cyanobacteria microbes. This suggests they are evidence of one of the earliest known life forms on Earth.
+Main article: Last universal common ancestor
+Further information: Timeline of the evolutionary history of life
+The last universal common ancestor (LUCA) is the most recent organism from which all organisms now living on Earth descend.[33] Thus it is the most recent common ancestor of all current life on Earth. The LUCA is estimated to have lived some 3.5 to 3.8 billion years ago (sometime in the Paleoarchean era).[34][35] The earliest evidence for life on Earth is graphite found to be biogenic in 3.7 billion-year-old metasedimentary rocks discovered in Western Greenland[36] and microbial mat fossils found in 3.48 billion-year-old sandstone discovered in Western Australia.[37][38] Although more than 99 percent of all species that ever lived on the planet are estimated to be extinct,[7][8] it is likely that more than a billion species of life exist on Earth currently, with the highest estimates and projections reaching one trillion species.[4]
+
+Information about the early development of life includes input from many different fields, including geology and planetary science. These sciences provide information about the history of the Earth and the changes produced by life. However, a great deal of information about the early Earth has been destroyed by geological processes over the course of time.
+
+All organisms are descended from a common ancestor or ancestral gene pool. Evidence for common descent may be found in traits shared between all living organisms. In Darwin's day, the evidence of shared traits was based solely on visible observation of morphologic similarities, such as the fact that all birds have wings, even those that do not fly.
+
+There is strong evidence from genetics that all organisms have a common ancestor. For example, every living cell makes use of nucleic acids as its genetic material, and uses the same twenty amino acids as the building blocks for proteins. All organisms use the same genetic code (with some extremely rare and minor deviations) to translate nucleic acid sequences into proteins. The universality of these traits strongly suggests common ancestry, because the selection of many of these traits seems arbitrary. Horizontal gene transfer makes it more difficult to study the last universal ancestor.[39] However, the universal use of the same genetic code, same nucleotides, and same amino acids makes the existence of such an ancestor overwhelmingly likely.[40]

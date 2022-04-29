@@ -1,0 +1,40 @@
+A word, phrase, or topic that is mentioned at a greater rate than others is said to be a "trending topic". Trending topics become popular either through a concerted effort by users or because of an event that prompts people to talk about a specific topic.[242] These topics help Twitter and their users to understand what is happening in the world and what people's opinions are about it.[243] The Twitter web interface displays a list of trending topics on a sidebar on the home page, along with sponsored content.
+
+Trending topics are sometimes the result of concerted efforts and manipulations by fans of certain celebrities or cultural phenomena, particularly musicians like Lady Gaga, Justin Bieber, Rihanna and One Direction, and novel series Twilight and Harry Potter. Twitter has altered the trend algorithm in the past to prevent manipulation of this type with limited success.[244] Twitter also censors trending hashtags that are claimed to be abusive or offensive. Twitter censored the #Thatsafrican[245] and #thingsdarkiessay hashtags after users complained that they found the hashtags offensive.[246]
+
+Twitter Lists
+In late 2009, the "Twitter Lists" feature was added, making it possible for users to follow ad hoc lists of users instead of individual users.[185][247]
+
+Moments
+In October 2015, Twitter introduced "Moments"—a feature that allows users to curate tweets from other users into a larger collection. Twitter initially intended the feature to be used by its in-house editorial team and other partners; they populated a dedicated tab in Twitter's apps, chronicling news headlines, sporting events, and other content.[248][249] In September 2016, creation of moments became available to all Twitter users.[250]
+
+Mobile
+
+
+The mobile version of Twitter[251]
+Twitter has mobile apps for iPhone, iPad, Android, Windows 10, Windows Phone, BlackBerry, and Nokia S40.[252] In April 2017, Twitter introduced Twitter Lite, a progressive web app designed for regions with unreliable and slow Internet connections, with a size of less than one megabyte, designed for devices with limited storage capacity.[253][254]
+
+Third-party applications
+For many years, Twitter has limited the use of third-party applications accessing the service by implementing a 100,000 user limit per application.[255] Since August 2010, third-party Twitter applications have been required to use OAuth, an authentication method that does not require users to enter their password into the authenticating application. This was done to increase security and improve the user experience.[256]
+
+Adding and following content
+There are numerous tools for adding content, monitoring content and conversations including Twitter's own TweetDeck, Salesforce.com, HootSuite, and Twitterfeed.com. As of 2009, fewer than half of tweets posted were posted using the web user interface with most users using third-party applications (based on an analysis of 500 million tweets by Sysomos).[257]
+
+Twitter Blue
+On June 3, 2021, Twitter announced a paid subscription service known as Twitter Blue, which provides additional premium features to the service:
+
+Undo Tweet, which allows users to withdraw a tweet within a short time frame before it is posted.[258]
+Bookmarks, which allows users to save individual tweets into folders.[258]
+Reader mode, which converts threads of tweets into an article-like view.[258]
+A selection of color themes and app icons for the Twitter mobile app.[258]
+Dedicated customer support.[258]
+NFT profile pictures, added on January 20, 2022. They are displayed in a hexagon-shaped frame, rather than circular like other profile pictures.[259]
+An edit feature for tweets is in development.[260]
+The service was initially released in Australia and Canada on June 3, 2021.[258] On November 9, 2021, Twitter Blue was launched for US and New Zealand users.[261]
+
+User monetization
+In June 2021, the company opened applications for its premium subscription options called Super Follows. This lets eligible accounts charge $2.99, $4.99 or $9.99 per month to subscribe to the account.[262] The launch only generated about $6,000 in its first two weeks.[263]
+
+In May 2021, Twitter began testing a Tip Jar feature on its iOS and Android clients. The feature allows users to send monetary tips to certain accounts, providing a financial incentive for content creators on the platform. The Tip Jar is optional and users can choose whether or not to enable tips for their account.[264] On September 23, 2021, Twitter announced that it will allow users to tip users on the social network with bitcoin. The feature will be available for iOS users. Previously, users could tip with fiat currency using services such as Square's Cash App and PayPal's Venmo. Twitter will integrate the Strike bitcoin lightning wallet service. It was noted that at this current time, Twitter will not take a cut of any money sent through the tips feature.[265]
+
+On August 27, 2021, Twitter rolled out Ticketed Spaces, which let Twitter Spaces hosts charge between $1 and $999 for access to their rooms.[266] In April 2022, Twitter announced that it will partner with Stripe Inc (digital payments processor) for piloting cryptocurrency payouts for limited users in the platform. Eligible users of Ticketed Spaces and Super Follows will be able to receive their earnings in the form of USD coin, a stablecoin whose value is that of the U.S. dollar. Users can also hold their earnings in crypto wallets, and then exchange them into other cryptocurrencies.[267]
