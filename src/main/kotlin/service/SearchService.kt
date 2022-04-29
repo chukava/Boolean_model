@@ -18,7 +18,7 @@ class SearchService {
         println("[INFO] Preprocessing started.")
 
         preprocessor = Preprocessor("stop_words_english")
-        preprocessor.preprocess("data") // from resources
+        preprocessor.preprocess("data_S") // from resources
 
         println("[INFO] Preprocessing finished.")
 
