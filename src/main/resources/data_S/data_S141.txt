@@ -1,0 +1,72 @@
+Etymology and usage.
+First attested in English in the late 19th century (prior to the first sustained powered flight), the word airplane, like aeroplane, derives from the French aéroplane, which comes from the Greek ἀήρ (aēr), "air"[6] and either Latin planus, "level",[7] or Greek πλάνος (planos), "wandering".[8][9] "Aéroplane" originally referred just to the wing, as it is a plane moving through the air.[10] In an example of synecdoche, the word for the wing came to refer to the entire aircraft.
+
+
+Many stories from antiquity involve flight, such as the Greek legend of Icarus and Daedalus, and the Vimana in ancient Indian epics. Around 400 BC in Greece, Archytas was reputed to have designed and built the first artificial, self-propelled flying device, a bird-shaped model propelled by a jet of what was probably steam, said to have flown some 200 m (660 ft).[11][12] This machine may have been suspended for its flight.[13][14]
+
+Some of the earliest recorded attempts with gliders were those by the 9th-century Andalusian and Arabic-language poet Abbas ibn Firnas and the 11th-century English monk Eilmer of Malmesbury; both experiments injured their pilots.[15] Leonardo da Vinci researched the wing design of birds and designed a man-powered aircraft in his Codex on the Flight of Birds (1502), noting for the first time the distinction between the center of mass and the center of pressure of flying birds.
+
+In 1799, George Cayley set forth the concept of the modern airplane as a fixed-wing flying machine with separate systems for lift, propulsion, and control.[16][17] Cayley was building and flying models of fixed-wing aircraft as early as 1803, and he built a successful passenger-carrying glider in 1853.[5] In 1856, Frenchman Jean-Marie Le Bris made the first powered flight, by having his glider "L'Albatros artificiel" pulled by a horse on a beach.[18] Then the Russian Alexander F. Mozhaisky also made some innovative designs. In 1883, the American John J. Montgomery made a controlled flight in a glider.[19] Other aviators who made similar flights at that time were Otto Lilienthal, Percy Pilcher, and Octave Chanute.
+
+Sir Hiram Maxim built a craft that weighed 3.5 tons, with a 110-foot (34 m) wingspan that was powered by two 360-horsepower (270 kW) steam engines driving two propellers. In 1894, his machine was tested with overhead rails to prevent it from rising. The test showed that it had enough lift to take off. The craft was uncontrollable, which Maxim, it is presumed, realized, because he subsequently abandoned work on it.[20]
+
+In the 1890s, Lawrence Hargrave conducted research on wing structures and developed a box kite that lifted the weight of a man. His box kite designs were widely adopted. Although he also developed a type of rotary aircraft engine, he did not create and fly a powered fixed-wing aircraft.[21]
+
+Between 1867 and 1896, the German pioneer of human aviation Otto Lilienthal developed heavier-than-air flight. He was the first person to make well-documented, repeated, successful gliding flights.
+
+Early powered flights.
+
+Patent drawings of Clement Ader's Éole.
+The Frenchman Clement Ader constructed his first of three flying machines in 1886, the Éole. It was a bat-like design run by a lightweight steam engine of his own invention, with four cylinders developing 20 horsepower (15 kW), driving a four-blade propeller. The engine weighed no more than 4 kilograms per kilowatt (6.6 lb/hp). The wings had a span of 14 m (46 ft). All-up weight was 300 kilograms (660 lb). On 9 October 1890, Ader attempted to fly the Éole. Aviation historians give credit to this effort as a powered take-off and uncontrolled hop of approximately 50 m (160 ft) at a height of approximately 200 mm (7.9 in).[22][23] Ader's two subsequent machines were not documented to have achieved flight.[24]
+
+The American Wright brothers flights in 1903 are recognized by the Fédération Aéronautique Internationale (FAI), the standard-setting and record-keeping body for aeronautics, as "the first sustained and controlled heavier-than-air powered flight".[4] By 1905, the Wright Flyer III was capable of fully controllable, stable flight for substantial periods. The Wright brothers credited Otto Lilienthal as a major inspiration for their decision to pursue manned flight.
+
+
+Santos-Dumont 14-bis, between 1906 and 1907.
+In 1906, the Brazilian Alberto Santos-Dumont made what was claimed to be the first airplane flight unassisted by catapult[25] and set the first world record recognized by the Aéro-Club de France by flying 220 meters (720 ft) in less than 22 seconds.[26] This flight was also certified by the FAI.[27][28]
+
+An early aircraft design that brought together the modern monoplane tractor configuration was the Blériot VIII design of 1908. It had movable tail surfaces controlling both yaw and pitch, a form of roll control supplied either by wing warping or by ailerons and controlled by its pilot with a joystick and rudder bar. It was an important predecessor of his later Blériot XI Channel-crossing aircraft of the summer of 1909.[29]
+
+World War I served as a testbed for the use of the airplane as a weapon. Airplanes demonstrated their potential as mobile observation platforms, then proved themselves to be machines of war capable of causing casualties to the enemy. The earliest known aerial victory with a synchronized machine gun-armed fighter aircraft occurred in 1915, by German Luftstreitkräfte Leutnant Kurt Wintgens. Fighter aces appeared; the greatest (by number of Aerial Combat victories) was Manfred von Richthofen.
+
+Following WWI, aircraft technology continued to develop. Alcock and Brown crossed the Atlantic non-stop for the first time in 1919. The first international commercial flights took place between the United States and Canada in 1919.[30]
+
+Airplanes had a presence in all the major battles of World War II. They were an essential component of the military strategies of the period, such as the German Blitzkrieg, The Battle of Britain, and the American and Japanese aircraft carrier campaigns of the Pacific War.
+
+Development of jet aircraft.
+
+The Concorde supersonic transport aircraft.
+The first practical jet aircraft was the German Heinkel He 178, which was tested in 1939. In 1943, the Messerschmitt Me 262, the first operational jet fighter aircraft, went into service in the German Luftwaffe.
+
+The first jet airliner, the de Havilland Comet, was introduced in 1952. The Boeing 707, the first widely successful commercial jet, was in commercial service for more than 50 years, from 1958 to 2010. The Boeing 747 was the world's biggest passenger aircraft from 1970 until it was surpassed by the Airbus A380 in 2005.
+
+Supersonic airliner flights, including those of the Concorde, have been limited to over-water flight at supersonic speed because of their sonic boom, which is prohibited over most populated land areas. The high cost of operation per passenger-mile and a deadly crash in 2000 induced the operators of the Concorde to remove it from service.[31][32]
+
+Propulsion.
+See also: Powered aircraft and Aircraft engine
+Propeller.
+Main articles: Propeller (aeronautics) and Aircraft engine.
+
+An Antonov An-2 biplane.
+An aircraft propeller, or airscrew, converts rotary motion from an engine or other power source, into a swirling slipstream which pushes the propeller forwards or backwards. It comprises a rotating power-driven hub, to which are attached two or more radial airfoil-section blades such that the whole assembly rotates about a longitudinal axis.[33] Three types of aviation engines used to power propellers include reciprocating engines (or piston engines), gas turbines, and electric motors. The amount of thrust a propeller creates is determined, in part, by its disk area—the area through which the blades rotate. The limitation on blade speed is the speed of sound; as when the blade tip exceeds the speed of sound, shock waves decrease propeller efficiency. The rpm required to generate a given tip speed is inversely proportional to the diameter of the propeller. The upper design speed limit for propeller-driven aircraft is Mach 0.6. Aircraft designed to go faster than that employ jet engines.[34]
+
+Reciprocating engine.
+Main articles: Radial engine, Inline engine (aeronautics), and Flat engine
+Reciprocating engines in aircraft have three main variants, radial, in-line and flat or horizontally opposed engine. The radial engine is a reciprocating type internal combustion engine configuration in which the cylinders "radiate" outward from a central crankcase like the spokes of a wheel and was commonly used for aircraft engines before gas turbine engines became predominant. An inline engine is a reciprocating engine with banks of cylinders, one behind another, rather than rows of cylinders, with each bank having any number of cylinders, but rarely more than six, and may be water-cooled. A flat engine is an internal combustion engine with horizontally-opposed cylinders.
+
+Gas turbine.
+Main article: Turboprop.
+A turboprop gas turbine engine consists of an intake, compressor, combustor, turbine, and a propelling nozzle, which provide power from a shaft through a reduction gearing to the propeller. The propelling nozzle provides a relatively small proportion of the thrust generated by a turboprop.
+
+
+Solar Impulse 1, a solar-powered aircraft with electric motors.
+Main article: Electric motor.
+An electric aircraft runs on electric motors with electricity coming from fuel cells, solar cells, ultracapacitors, power beaming,[35] or batteries. Currently, flying electric aircraft are mostly experimental prototypes, including manned and unmanned aerial vehicles, but there are some production models on the market.[36]
+
+
+Jet aircraft are propelled by jet engines, which are used because the aerodynamic limitations of propellers do not apply to jet propulsion. These engines are much more powerful than a reciprocating engine for a given size or weight and are comparatively quiet and work well at higher altitude. Variants of the jet engine include the ramjet and the scramjet, which rely on high airspeed and intake geometry to compress the combustion air, prior to the introduction and ignition of fuel. Rocket motors provide thrust by burning a fuel with an oxidizer and expelling gas through a nozzle.
+
+Turbofan.
+Most jet aircraft use turbofan jet engines, which employ a gas turbine to drive a ducted fan, which accelerates air around the turbine to provide thrust in addition to that which is accelerated through the turbine. The ratio of air passing around the turbine to that passing through is called the by-pass ratio.[37] They represent a compromise between turbojet (with no bypass) and turboprop forms of aircraft propulsion (primarily powered with bypass air).[38]
+
+Subsonic aircraft, such as airliners, employ high by-pass jet engines for fuel efficiency. Supersonic aircraft, such as jet fighters, use low-bypass turbofans. However at supersonic speeds, the air entering the engine must be decelerated to a subsonic speed and then re-accelerated back to supersonic speeds after combustion. An afterburner may be used on combat aircraft to increase power for short periods of time by injecting fuel directly into the hot exhaust gases. Many jet aircraft also use thrust reversers to slow down after landing.[38]

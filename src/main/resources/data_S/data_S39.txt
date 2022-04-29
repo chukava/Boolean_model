@@ -1,0 +1,16 @@
+Studies
+A twin study compares the concordance rate of identical twins to that of fraternal twins. This can help suggest whether a disease or a certain trait has a genetic cause.[3] Controversial uses of twin data have looked at concordance rates for homosexuality and intelligence. Other studies have involved looking at the genetic and environmental factors that can lead to increased LDL in women twins.[4]
+
+Because identical twins are genetically virtually identical, it follows that a genetic pattern carried by one would very likely also be carried by the other. If a characteristic identified in one twin is caused by a certain gene, then it would also very likely be present in the other twin. Thus, the concordance rate of a given characteristic helps suggest whether or to what extent a characteristic is related to genetics.
+
+There are several problems with this assumption:
+
+A given genetic pattern may not have 100% penetrance, in which case it may have different phenotypic consequences in genetically identical individuals;
+Developmental and environmental conditions may be different for genetically identical individuals. If developmental and environmental conditions contribute to the development of the disease or other characteristic, there can be differences in the outcome of genetically identical individuals;
+The logic is further complicated if the characteristic is polygenic, i.e., caused by differences in more than one gene.
+Epigenetic effects can alter the genetic expressions in twins through varied factors. The expression of the epigenetic effect is typically weakest when the twins are young and increases as the identical twins grow older.[5]
+Where in the absence of one or more environmental factors a condition will not develop in an individual, even with high concordance rates, the proximate cause is environmental, with strong genetic influence: thus "a substantial role of genetic factors does not preclude the possibility that the development of the disease can be modified by environmental intervention." So "genetic factors are assumed to contribute to the development of that disease", but cannot be assumed alone to be causal.[6]
+Genotyping studies
+In genotyping studies where DNA is directly assayed for positions of variance (see SNP), concordance is a measure of the percentage of SNPs that are measured as identical. Samples from the same individual or identical twins theoretically have a concordance of 100%, but due to assaying errors and somatic mutations, they are usually found in the range of 99% to 99.95%. Concordance can therefore be used as a method of assessing the accuracy of a genotyping assay platform.
+
+Because a child inherits half of his or her DNA from each parent, parents and children, siblings, and fraternal (dizygotic) twins have a concordance that averages 50% using this measure.
