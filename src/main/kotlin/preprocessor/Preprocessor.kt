@@ -46,7 +46,7 @@ class Preprocessor(stopWordsFile: String) {
     fun preprocess(folderName: String) {
         var pathToFile: URL?
         var fileId = 1
-        while (fileId < 101) {
+        while (fileId < 151) {
             try {
                 pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data$fileId.txt")
                 preprocessFile(pathToFile.path, fileId)
