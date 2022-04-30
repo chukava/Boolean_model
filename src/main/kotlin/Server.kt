@@ -12,6 +12,7 @@ import io.ktor.server.routing.*
 import model.Query
 import service.SearchService
 
+
 fun main() {
     startServer()
 }
@@ -73,35 +74,3 @@ fun Application.configureRouting() {
         }
     }
 }
-
-
-//1. Extrakce a preprocesing termů z dokumentů. - DONE.
-//2. Efektivní uložení dokumentů v datové struktuře (invertovaný seznam). - DONE
-//3. Vyhodnocovací/dotazovací modul využívající strukturu z předchozího kroku.  (AST, parser) - DONE
-//4. Sekvencni pruchod DONE
-//5. DataSets for testing - s, l - DONE
-//7. Time comparing - DONE
-
-//6. Frontend
-//8. Documentation
-//9. Hosting? - no need!
-
-
-/* client tests: success
-        val client2 = HttpClient(CIO)
-        val response1: HttpResponse = client2.post("http://0.0.0.0:8080/boolean-model/query") {
-                contentType(ContentType.Application.Json)
-                setBody("voter and department")
-        }
-
-        println(response1.status)
-        println(response1.bodyAsText())
-
-
-
-        val client = HttpClient(CIO)
-        val response: HttpResponse = client.get("http://0.0.0.0:8080/boolean-model/result")
-        println(response.status)
-        println(response.bodyAsText())
-        client.close()
- */
