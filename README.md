@@ -51,13 +51,13 @@ ____
 
 [Zadání](https://moodle-vyuka.cvut.cz/pluginfile.php/493984/mod_page/content/24/i-1.pdf)
 
-###SW:
+### SW:
 * [Ktor server creation](https://ktor.io/docs/intellij-idea.html)
 * [Kotlin serialization](https://kotlinlang.org/docs/serialization.html)
 * [React & Axios api calling](https://www.digitalocean.com/community/tutorials/react-axios-react)
 * [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/download/)
 
-###Implementace a testování:
+### Implementace a testování:
 
 1. Files preprocessing:
 * [Files preprocessing - stopWords](https://countwordsfree.com/stopwords)
