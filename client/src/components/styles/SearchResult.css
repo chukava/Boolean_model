@@ -1,0 +1,13 @@
+.Results {
+    display: flex;
+}
+
+.My-Text{
+    margin: 10px;
+    color: #172b4d;
+}
+
+.My-table{
+    color: #172b4d;
+    list-style-type: none;
+}

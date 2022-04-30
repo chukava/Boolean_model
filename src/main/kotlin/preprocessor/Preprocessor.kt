@@ -53,12 +53,9 @@ class Preprocessor(stopWordsFile: String) {
             try {
                 pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data_$dataSetId$fileId.txt")
                 preprocessFile(pathToFile.path, fileId)
-
                 fileIds.add(File(fileId))
-
             } catch (e: Exception) {
-                println("error")
-                return
+                println("[ERROR] Didn't manage to preprocess file" + "$folderName/data_$dataSetId$fileId.txt")
             }
             ++fileId
         }

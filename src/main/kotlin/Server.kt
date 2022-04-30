@@ -23,6 +23,7 @@ private fun startServer() {
         configureCors()
     }
     server.start(true)
+    println("[INFO] Server started.")
 }
 
 fun Application.configureSerialization() {
@@ -44,13 +45,13 @@ fun Application.configureRouting() {
     val searchService_S = SearchService("data_S")
     val searchService_L = SearchService("data_L")
 
-
     routing {
         post("/saveQuery") {
-            var query = call.receive<Query>();
+            val query = call.receive<Query>()
 
             if (searchService_S.setQuery(query) && searchService_L.setQuery(query)) call.respond("Query accepted.")
             else call.respond("Bad query syntax.")
+
         }
         get("/getTimeDifference-s") {
             call.respond(searchService_S.getTimeDiff())
@@ -84,7 +85,6 @@ fun Application.configureRouting() {
 //6. Frontend
 //8. Documentation
 //9. Hosting? - no need!
-
 
 
 /* client tests: success

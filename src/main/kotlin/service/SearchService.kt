@@ -10,12 +10,12 @@ import preprocessor.Preprocessor
 class SearchService(dataSet: String) {
     private val preprocessor: Preprocessor
     private val parser: Parser
-    private var query: String = "flu and spanish or interior"
+    private var query: String = "home"
     private var expression: Expression
-    private var time: TimeDifference = TimeDifference(0,0,0)
+    private var time: TimeDifference = TimeDifference(0, 0, 0)
 
     init {
-        println("[INFO] Preprocessing started.")
+        println("[INFO] Preprocessing of $dataSet started.")
 
         preprocessor = Preprocessor("stop_words/stop_words_english")
         preprocessor.preprocess(dataSet) // from resources
@@ -24,6 +24,7 @@ class SearchService(dataSet: String) {
 
         parser = Parser(preprocessor)
         expression = parser.parse(query)
+
     }
 
     fun setQuery(newQuery: Query): Boolean {
@@ -41,7 +42,7 @@ class SearchService(dataSet: String) {
         return true
     }
 
-    fun getTimeDiff() : TimeDifference{
+    fun getTimeDiff(): TimeDifference {
         time.diff = time.timeSequence - time.timeBoolean
         return time
     }
@@ -54,7 +55,7 @@ class SearchService(dataSet: String) {
         val result = expression.evaluateBoolean()
         val end = System.nanoTime()
 
-        time.timeBoolean = end-begin
+        time.timeBoolean = end - begin
         println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()
@@ -68,7 +69,7 @@ class SearchService(dataSet: String) {
         val result = expression.evaluateSequence()
         val end = System.nanoTime()
 
-        time.timeSequence = end-begin
+        time.timeSequence = end - begin
         println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()

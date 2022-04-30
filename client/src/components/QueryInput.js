@@ -1,24 +1,20 @@
 import React from 'react';
 import './styles/QueryInput.css'
+import axios from 'axios';
+
 
 export default class QueryInput extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
             fields: {},
             errors: {},
-            query: ""
+            query: "",
+            success: true
         }
-    }
-
-    inputCheck(e) {
-        const re = /[A-Za-z() ]+/g;
-        if (!re.test(e.key)) {
-            e.preventDefault();
-        }
-    }
+    };
 
     handleValidation(){
         let fields = this.state.fields;
@@ -26,7 +22,6 @@ export default class QueryInput extends React.Component {
         let formIsValid = true;
         let query = ""
 
-        //Name
         if(!fields["query"]){
             formIsValid = false;
             errors["query"] = "Cannot be empty!";
@@ -59,24 +54,35 @@ export default class QueryInput extends React.Component {
     contactSubmit(e){
         e.preventDefault();
         if(this.handleValidation()){
-            // alert("Form submitted");
+            const query = { query: this.state.fields["query"] };
+            axios.post('http://localhost:8080/saveQuery', query)
+                .then((response) => {
+                    {
+                        if(response.data === "Query accepted.")
+                            this.setState({ success: true})
+                        else
+                            this.setState({ success: false})
+                    }
+                });
+            this.setState({ query: ''})
         }else{
             // alert("Form has errors.")
         }
 
+        if(!this.state.success)
+            alert("Form has errors.")
+
     }
-
-
 
     render() {
         return (
             <form onSubmit= {this.contactSubmit.bind(this)}>
                 <p className="error">{this.state.errors["query"]}</p>
                 <label className="Query-label">Query:
-                    <input className="My-Input" type="text" onChange={this.handleChange.bind(this, "query")} value={this.state.fields["query"]}/>
+                    <input placeholder="" className="My-Input" id="submit"  type="text" onChange={this.handleChange.bind(this, "query")} value={this.state.fields["query"]}/>
                 </label>
                 <button className="Search-Button" id="submit" value="Submit">Submit</button>
-                <p className="lol">{this.state.query}</p>
+                <p claclassName="lol">{this.state.query}</p>
             </form>
         );
     }

@@ -4,7 +4,7 @@ class FileTable {
     val table: HashMap<File, MutableSet<String>> = HashMap()
 
     fun addFile(fileId: Int) {
-        table.put(File(fileId), mutableSetOf())
+        table[File(fileId)] = mutableSetOf()
     }
 
     fun addTermByFile(fileId: Int, term: String) {
