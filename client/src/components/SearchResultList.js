@@ -71,8 +71,8 @@ export default class SearchResultList extends React.Component {
                         <div className="col-6">
                             <div className="col-12">
                                 <form onSubmit={this.getResultsS.bind(this)}>
-                                    <button className="Search-Button-R" id="submit" value="Submit">Search in small data
-                                        set
+                                    <button className="Search-Button-R" id="submit" value="Submit">Search In Small Sata
+                                        Set
                                     </button>
                                 </form>
                             </div>
@@ -80,32 +80,32 @@ export default class SearchResultList extends React.Component {
                         <div className="col-6">
                             <div className="col-12">
                                 <form onSubmit={this.getResultsL.bind(this)}>
-                                    <button className="Search-Button-R" id="submit" value="Submit">Search in large data
-                                        set
+                                    <button className="Search-Button-R" id="submit" value="Submit">Search In Large Data
+                                        Set
                                     </button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <label></label>
+                <div className="container">
+                    <label/>
                     <div className="row  justify-content-center">
                         {this.state.data_s &&
                             <div className="col-6">
                                 <div className="col-12 border bg-light ">
-                                    <p className="My-Text">Small data set of <strong>200</strong> files processed</p>
+                                    <p className="My-Text">Small Data Set Of <strong>200</strong> Files Processed</p>
                                     <span className="My-Text">Sequential Search</span>
-                                    <div className="vr"></div>
+                                    <div className="vr"/>
                                     <span className="My-Text">Boolean Search</span>
-                                    <p></p>
+                                    <p/>
                                     <span
                                         className="My-Text">Total found: <strong>{this.state.boolean_results_s.length}</strong></span>
                                     <hr/>
                                     <TimeDiff dataSet={"s"}/>
                                     <div className="row">
                                         <form onSubmit={this.printDataS.bind(this)}>
-                                            <button className="Time-button" value="Submit">Print</button>
+                                            <button className="Time-button" value="Submit">Print List Of Files</button>
                                         </form>
                                         {this.state.printData_s &&
                                             <div>
@@ -114,7 +114,7 @@ export default class SearchResultList extends React.Component {
                                                         this.state.boolean_results_s
                                                             .map(file =>
                                                                 <li className="My-row"
-                                                                    key={file.fileId}>{file.fileId}</li>
+                                                                    key={file.fileId}>fileId: <strong>{file.fileId}</strong></li>
                                                             )
                                                     }
                                                 </ul>
@@ -127,18 +127,18 @@ export default class SearchResultList extends React.Component {
                         {this.state.data_l &&
                             <div className="col-6">
                                 <div className="col-12 border bg-light ">
-                                    <p className="My-Text">Large data set of <strong>2000</strong> files processed</p>
+                                    <p className="My-Text">Large Data Set Of <strong>2000</strong> Files Processed</p>
                                     <span className="My-Text">Sequential Search </span>
-                                    <div className="vr"></div>
+                                    <div className="vr"/>
                                     <span className="My-Text">Boolean Search</span>
-                                    <p></p>
+                                    <p/>
                                     <span
                                         className="My-Text">Total found: <strong>{this.state.boolean_results_l.length}</strong></span>
                                     <hr/>
                                     <TimeDiff dataSet={"l"}/>
                                     <div className="row">
                                         <form onSubmit={this.printDataL.bind(this)}>
-                                            <button className="Time-button" value="Submit">Print</button>
+                                            <button className="Time-button" value="Submit">Print List Of Files</button>
                                         </form>
                                         {this.state.printData_l &&
                                             <div>
@@ -147,7 +147,7 @@ export default class SearchResultList extends React.Component {
                                                         this.state.boolean_results_l
                                                             .map(file =>
                                                                 <li className="My-row"
-                                                                    key={file.fileId}>{file.fileId}</li>
+                                                                    key={file.fileId}>fileId: <strong>{file.fileId}</strong></li>
                                                             )
                                                     }
                                                 </ul>

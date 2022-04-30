@@ -12,8 +12,8 @@ export default class QueryInput extends React.Component {
         this.state = {
             error: "",
             info: "",
-            success: true,
             query: "",
+            success: true,
             hideRes: false
         }
 
@@ -43,14 +43,12 @@ export default class QueryInput extends React.Component {
 
         this.setState({error: error});
         this.setState({query: query});
-
         return formIsValid;
     }
 
 
     handleChange(field, e) {
-        let query = this.state.query;
-        query = e.target.value;
+        let query = e.target.value;
         this.setState({query});
     }
 
@@ -79,7 +77,7 @@ export default class QueryInput extends React.Component {
         return (
             <body className="My-body">
             <form onSubmit={this.contactSubmit.bind(this)}>
-                <label></label>
+                <label/>
                 {syntaxError &&
                     <div className="row justify-content-center">
                         <div className=" col-6 alert alert-danger alert-dismissible fade show" role="alert">
@@ -94,7 +92,7 @@ export default class QueryInput extends React.Component {
                 <button className="Search-Button" id="submit" value="Submit">Submit</button>
                 {!syntaxError && this.state.info &&
                     <div className="row justify-content-center">
-                        <div className=" col-6 alert alert-secondary alert-dismissible fade show" role="alert">
+                        <div className=" col-7 alert alert-secondary alert-dismissible fade show" role="alert">
                             {this.state.info}
                         </div>
                     </div>

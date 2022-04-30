@@ -1,24 +1,36 @@
 .Results {
     display: flex;
 }
+
 .Search-Button-R {
+    box-shadow: 0 6px 6px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
+
     margin-top: 20px;
     margin-left: 10px;
     height: 35px;
     width: 250px;
-    border: none; /* <-- This thing here */
-    /*border: solid 1px gray;*/
+    border: none;
     border-radius: 15px;
     background-color: #8898aa;
     color: azure;
 }
 
-.My-Text{
+.Search-Button-R:hover {
+    background-color: #768496 ;
+}
+
+.Search-Button-R:active {
+    box-shadow: 1px 1px gray;
+    transform: translateY(1px);
+}
+
+
+.My-Text {
     margin: 10px;
     color: #172b4d;
 }
 
-.My-table{
+.My-table {
     color: #172b4d;
     list-style-type: none;
 }
