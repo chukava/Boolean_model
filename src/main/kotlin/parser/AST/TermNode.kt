@@ -2,6 +2,7 @@ package parser.AST
 
 import model.File
 import model.FileTable
+import org.apache.commons.lang3.ObjectUtils.clone
 
 
 class TermNode(
@@ -22,7 +23,7 @@ class TermNode(
     }
 
     override fun evaluateBoolean(): MutableSet<File> {
-        return fileIdsByTerm
+        return clone(fileIdsByTerm)
     }
 
     override fun evaluateSequence(): MutableSet<File> {

@@ -7,6 +7,7 @@ class Lexer {
     private var currToken: String = String()
 
     fun initQuery(query: String) {
+        tokens.clear()
         val tokens = StringTokenizer(query)
         while (tokens.hasMoreTokens()) {
             this.tokens.add(tokens.nextToken())
