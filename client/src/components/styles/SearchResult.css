@@ -1,6 +1,17 @@
 .Results {
     display: flex;
 }
+.Search-Button-R {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 35px;
+    width: 250px;
+    border: none; /* <-- This thing here */
+    /*border: solid 1px gray;*/
+    border-radius: 15px;
+    background-color: #8898aa;
+    color: azure;
+}
 
 .My-Text{
     margin: 10px;

@@ -1,6 +1,5 @@
 import logo from './img.png';
 import './App.css';
-import SearchResultList from "./components/SearchResultList";
 import QueryInput from "./components/QueryInput";
 
 
@@ -13,9 +12,6 @@ function App() {
       </header>
         <div className="QueryInput">
             <QueryInput/>
-        </div>
-        <div className="SearchResultList">
-            <SearchResultList/>
         </div>
     </div>
   );

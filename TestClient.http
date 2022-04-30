@@ -3,7 +3,7 @@ POST http://localhost:8080/saveQuery
 Content-Type: application/json
 
 {
-  "query": "goal"
+  "query": "development"
 }
 
 ###
