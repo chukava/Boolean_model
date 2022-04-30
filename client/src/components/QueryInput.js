@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/QueryInput.css'
 import axios from 'axios';
+import SearchResultList from "./SearchResultList";
 
 
 export default class QueryInput extends React.Component {
@@ -9,81 +10,102 @@ export default class QueryInput extends React.Component {
         super(props);
 
         this.state = {
-            fields: {},
-            errors: {},
+            error: "",
+            info: "",
+            success: true,
             query: "",
-            success: true
+            hideRes: false
         }
+
     };
 
-    handleValidation(){
-        let fields = this.state.fields;
-        let errors = {};
+    handleValidation() {
+        let query = this.state.query;
+        let error = "";
         let formIsValid = true;
-        let query = ""
 
-        if(!fields["query"]){
+        if (!query) {
             formIsValid = false;
-            errors["query"] = "Cannot be empty!";
-        }
-
-        if(typeof fields["query"] !== "undefined"){
-            if(!fields["query"].match(/^[a-zA-Z() ]+$/)){
+            error = "Cannot be empty!";
+        } else if (typeof query !== "undefined") {
+            if (!query.match(/^[a-zA-Z() ]+$/)) {
                 formIsValid = false;
-                errors["query"] = "Only letters and round brackets allows!";
+                error = "Only letters and round brackets allows!";
             }
         }
 
-        if(formIsValid)
-            this.setState({query: "You entered: " + fields["query"]})
-        else
-            this.setState({query: ""})
+        if (formIsValid)
+            this.setState({info: "You entered: " + query})
+        else {
+            this.setState({info: ""})
+            this.setState({success: false});
+        }
 
-        this.setState({errors: errors});
-        this.setState({fields: {}})
+        this.setState({error: error});
+        this.setState({query: query});
+
         return formIsValid;
     }
 
 
-    handleChange(field, e){
-        let fields = this.state.fields;
-        fields[field] = e.target.value;
-        this.setState({fields});
+    handleChange(field, e) {
+        let query = this.state.query;
+        query = e.target.value;
+        this.setState({query});
     }
 
-    contactSubmit(e){
+    contactSubmit(e) {
+        this.setState({success: false})
+
         e.preventDefault();
-        if(this.handleValidation()){
-            const query = { query: this.state.fields["query"] };
+        if (this.handleValidation()) {
+            const query = {query: this.state.query};
             axios.post('http://localhost:8080/saveQuery', query)
                 .then((response) => {
-                    {
-                        if(response.data === "Query accepted.")
-                            this.setState({ success: true})
-                        else
-                            this.setState({ success: false})
+                    if (response.data === "Query accepted.")
+                        this.setState({success: true})
+                    else {
+                        this.setState({error: "Bad query syntax!"})
                     }
                 });
-            this.setState({ query: ''})
-        }else{
-            // alert("Form has errors.")
         }
 
-        if(!this.state.success)
-            alert("Form has errors.")
-
+        this.setState({hideRes: true})
+        this.setState({query: ''})
     }
 
     render() {
+        const syntaxError = !this.state.success
         return (
-            <form onSubmit= {this.contactSubmit.bind(this)}>
-                <p className="error">{this.state.errors["query"]}</p>
+            <body className="My-body">
+            <form onSubmit={this.contactSubmit.bind(this)}>
+                <label></label>
+                {syntaxError &&
+                    <div className="row justify-content-center">
+                        <div className=" col-6 alert alert-danger alert-dismissible fade show" role="alert">
+                            {this.state.error}
+                        </div>
+                    </div>
+                }
                 <label className="Query-label">Query:
-                    <input placeholder="" className="My-Input" id="submit"  type="text" onChange={this.handleChange.bind(this, "query")} value={this.state.fields["query"]}/>
+                    <input placeholder="" className="My-Input" id="submit"
+                           onChange={this.handleChange.bind(this, "info")} value={this.state.query}/>
                 </label>
                 <button className="Search-Button" id="submit" value="Submit">Submit</button>
-                <p claclassName="lol">{this.state.query}</p>
+                {!syntaxError && this.state.info &&
+                    <div className="row justify-content-center">
+                        <div className=" col-6 alert alert-secondary alert-dismissible fade show" role="alert">
+                            {this.state.info}
+                        </div>
+                    </div>
+                }
             </form>
+            {!syntaxError && this.state.info &&
+                <div className="SearchResultList">
+                    <SearchResultList hideResults={this.state.hideRes}/>
+                </div>
+            }
+            </body>
         );
     }
 
