@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './styles/SearchResult.css'
+import TimeDiff from "./TimeDiff";
 
 export default class SearchResultList extends React.Component {
 
@@ -17,42 +18,38 @@ export default class SearchResultList extends React.Component {
         };
     }
 
-    getResultsS(e){
+    getResultsS(e) {
         e.preventDefault();
         axios.get(`http://localhost:8080/boolean-model/getResult-s`)
             .then(result => {
                 const boolean_results_s = result.data;
-                this.setState({ boolean_results_s });
+                console.log(result.data)
+
+                this.setState({boolean_results_s});
             })
         axios.get(`http://localhost:8080/sequence-search/getResult-s`)
             .then(result => {
                 const sequence_results_s = result.data;
-                this.setState({ sequence_results_s });
+                this.setState({sequence_results_s});
             })
-        this.setState({data_s : true})
+        this.setState({data_s: true})
     }
 
-    getResultsL(e){
+    getResultsL(e) {
         e.preventDefault();
         axios.get(`http://localhost:8080/boolean-model/getResult-l`)
             .then(result => {
                 const boolean_results_l = result.data;
-                this.setState({ boolean_results_l });
+                this.setState({boolean_results_l});
             })
         axios.get(`http://localhost:8080/sequence-search/getResult-l`)
             .then(result => {
                 const sequence_results_l = result.data;
-                this.setState({ sequence_results_l });
+                this.setState({sequence_results_l});
             })
-        this.setState({data_l : true})
+        this.setState({data_l: true})
     }
 
-
-    //
-    // componentDidMount() {
-    //
-    //
-    // }
 
     render() {
         return (
@@ -62,14 +59,18 @@ export default class SearchResultList extends React.Component {
                         <div className="col-6">
                             <div className="col-12">
                                 <form onSubmit={this.getResultsS.bind(this)}>
-                                    <button className="Search-Button-R" id="submit"   value="Submit" >Search in small data set</button>
+                                    <button className="Search-Button-R" id="submit" value="Submit">Search in small data
+                                        set
+                                    </button>
                                 </form>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="col-12">
                                 <form onSubmit={this.getResultsL.bind(this)}>
-                                    <button className="Search-Button-R" id="submit"  value="Submit" >Search in large data set</button>
+                                    <button className="Search-Button-R" id="submit" value="Submit">Search in large data
+                                        set
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -81,45 +82,37 @@ export default class SearchResultList extends React.Component {
                         {this.state.data_s &&
                             <div className="col-6">
                                 <div className="col-12 border bg-light ">
-                                    <p className="My-Text">Small data set of 200 files processed</p>
+                                    <p className="My-Text">Small data set of <strong>200</strong> files processed</p>
                                     <span className="My-Text">Sequential Search</span>
                                     <div className="vr"></div>
                                     <span className="My-Text">Boolean Search</span>
                                     <p></p>
-                                    <span className="My-Text">Total found: {this.state.boolean_results_s.length}</span>
-                                    <div className="vr"></div>
-                                    <span className="My-Text">Total found: {this.state.sequence_results_s.length}</span>
-                                    <hr/>
+                                    <span className="My-Text">Total found: <strong>{this.state.boolean_results_s.length}</strong></span>
 
+                                    <hr/>
+                                    <TimeDiff dataSet={"s"}/>
                                     <div className="row">
-                                        <div className="col-5">
+                                        <div className="col-6">
                                             <div className="dropdown">
-                                                <button className="dropdown-toggle" type="button"
+                                                <button className="dropdown-toggle Search-Button-R" type="button"
                                                         id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
                                                     Dropdown button
                                                 </button>
-                                                <ul className="dropdown-menu My-table" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                                {
-                                                    this.state.boolean_results_s
-                                                        .map(file =>
-                                                            <li><a className="dropdown-item" href="#">{file.fileId}</a></li>
-                                                        )
-                                                }
+                                                <ul className="dropdown-menu My-table"
+                                                    aria-labelledby="dropdownMenuButton1">
+                                                    {
+                                                        this.state.boolean_results_s
+                                                            .map(file =>
+                                                                <li><a className="dropdown-item"
+                                                                       href="#">{file.fileId}</a></li>
+                                                            )
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div className="col-5">
-                                            <ul className="My-table">
-                                                {
-                                                    this.state.sequence_results_s
-                                                        .map(file =>
-                                                            <li className="My-row" key={file.fileId}>{file.fileId}</li>
-                                                        )
-                                                }
-                                            </ul>
+                                        <div className="col-6">
+                                            <button className="Search-Button-R">Print ids</button>
                                         </div>
                                     </div>
                                 </div>
@@ -128,14 +121,14 @@ export default class SearchResultList extends React.Component {
                         {this.state.data_l &&
                             <div className="col-6">
                                 <div className="col-12 border bg-light ">
-                                    <p className="My-Text">Large data set of 2000 files processed</p>
-                                    <span className="My-Text">Sequential Search</span>
+                                    <p className="My-Text">Large data set of <strong>2000</strong> files processed</p>
+                                    <span className="My-Text">Sequential Search </span>
                                     <div className="vr"></div>
                                     <span className="My-Text">Boolean Search</span>
                                     <p></p>
-                                    <span className="My-Text">Total found: {this.state.boolean_results_l.length}</span>
+                                    <span className="My-Text">Total found: <strong>{this.state.boolean_results_l.length}</strong></span>
                                     <div className="vr"></div>
-                                    <span className="My-Text">Total found: {this.state.sequence_results_l.length}</span>
+                                    {/*<span className="My-Text">Total found: {this.state.sequence_results_l.length}</span>*/}
                                     <hr/>
                                     <div className="row">
                                         <div className="col-5">

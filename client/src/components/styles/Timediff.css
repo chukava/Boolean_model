@@ -1,0 +1,19 @@
+.Time-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 420px;
+    border: none; /* <-- This thing here */
+    /*border: solid 1px gray;*/
+    border-radius: 15px;
+    background-color: #5e72e4;
+    color: azure;
+}
+
+.My-p {
+    margin: 12px 0 4px 0;
+    /*margin: 10px;*/
+    /*margin-bottom: 5px;*/
+
+}
