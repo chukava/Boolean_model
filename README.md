@@ -23,41 +23,41 @@ ____
 ### Popis microservis
 ```sh
 POST: /saveQuery  
-
+___
 Accepts query and validates it. OK - responds with "Querry accepted." ERROR - "Bad query syntax."
 ```
-db = s/l : where
-* s - small data set of 200 diles
-* l - larhe data set of 2000 files
+$db = 
+* when:  **s** - small data set of 200 diles
+* when:  **l** - larhe data set of 2000 files
 
 ```sh
 GET: /boolean-model/getResult-$db  
-
+___
 Returns a set of file Ids{0..(200|2000) as a result of query search using inverted indexes in db
 ```
 ```sh
 GET: /sequence-search/getResult-$db
-
+---
 Returns a set of file Ids{0..(200|2000)} as a result of query search using sequantial search in db
 
 ```
 ```sh
 GET: /getTimeDifference-$db  
-
-Return the duration of search using boolean method and sequantial and their difference.
+---
+Returns the duration of search using boolean method and sequantial and their difference in ns.
 ```
 ____
-### Zdroje
+## Zdroje
 
 [Zadání](https://moodle-vyuka.cvut.cz/pluginfile.php/493984/mod_page/content/24/i-1.pdf)
 
-SW:
+###SW:
 * [Ktor server creation](https://ktor.io/docs/intellij-idea.html)
 * [Kotlin serialization](https://kotlinlang.org/docs/serialization.html)
 * [React & Axios api calling](https://www.digitalocean.com/community/tutorials/react-axios-react)
 * [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/download/)
 
-Implementace a testování:
+###Implementace a testování:
 
 1. Files preprocessing:
 * [Files preprocessing - stopWords](https://countwordsfree.com/stopwords)
