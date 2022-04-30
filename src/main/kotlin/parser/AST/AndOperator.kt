@@ -24,8 +24,8 @@ class AndOperator(lo: Expression, ro: Expression, fileIds: MutableSet<File>?) : 
     }
 
     override fun evaluateSequence(): MutableSet<File>? {
-        val leftIds = leftOperand.evaluateBoolean()
-        val rightIds = rightOperand.evaluateBoolean()
+        val leftIds = leftOperand.evaluateSequence()
+        val rightIds = rightOperand.evaluateSequence()
 
         if (leftIds == null) return rightIds
         else if (rightIds == null) return leftIds

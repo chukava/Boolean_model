@@ -18,7 +18,7 @@ class NotOperator(op: Expression, fileIds: MutableSet<File>?) : Expression(fileI
 
     override fun evaluateSequence(): MutableSet<File>? {
         val fileIdsByNotTerm = fileIds
-        operand.evaluateBoolean()?.let { fileIdsByNotTerm?.removeAll(it) }
+        operand.evaluateSequence()?.let { fileIdsByNotTerm?.removeAll(it) }
         return fileIdsByNotTerm
     }
 }

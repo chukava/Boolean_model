@@ -14,7 +14,9 @@ export default class SearchResultList extends React.Component {
             boolean_results_l: [],
             sequence_results_l: [],
             data_s: false,
-            data_l: false
+            data_l: false,
+            printData_s: false,
+            printData_l: false
         };
     }
 
@@ -48,6 +50,16 @@ export default class SearchResultList extends React.Component {
                 this.setState({sequence_results_l});
             })
         this.setState({data_l: true})
+    }
+
+    printDataS(e) {
+        e.preventDefault();
+        this.setState({printData_s: true})
+    }
+
+    printDataL(e) {
+        e.preventDefault();
+        this.setState({printData_l: true})
     }
 
 
@@ -87,33 +99,27 @@ export default class SearchResultList extends React.Component {
                                     <div className="vr"></div>
                                     <span className="My-Text">Boolean Search</span>
                                     <p></p>
-                                    <span className="My-Text">Total found: <strong>{this.state.boolean_results_s.length}</strong></span>
-
+                                    <span
+                                        className="My-Text">Total found: <strong>{this.state.boolean_results_s.length}</strong></span>
                                     <hr/>
                                     <TimeDiff dataSet={"s"}/>
                                     <div className="row">
-                                        <div className="col-6">
-                                            <div className="dropdown">
-                                                <button className="dropdown-toggle Search-Button-R" type="button"
-                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                    Dropdown button
-                                                </button>
-                                                <ul className="dropdown-menu My-table"
-                                                    aria-labelledby="dropdownMenuButton1">
+                                        <form onSubmit={this.printDataS.bind(this)}>
+                                            <button className="Time-button" value="Submit">Print</button>
+                                        </form>
+                                        {this.state.printData_s &&
+                                            <div>
+                                                <ul className="My-table">
                                                     {
                                                         this.state.boolean_results_s
                                                             .map(file =>
-                                                                <li><a className="dropdown-item"
-                                                                       href="#">{file.fileId}</a></li>
+                                                                <li className="My-row"
+                                                                    key={file.fileId}>{file.fileId}</li>
                                                             )
                                                     }
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div className="col-6">
-                                            <button className="Search-Button-R">Print ids</button>
-                                        </div>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -126,31 +132,27 @@ export default class SearchResultList extends React.Component {
                                     <div className="vr"></div>
                                     <span className="My-Text">Boolean Search</span>
                                     <p></p>
-                                    <span className="My-Text">Total found: <strong>{this.state.boolean_results_l.length}</strong></span>
-                                    <div className="vr"></div>
-                                    {/*<span className="My-Text">Total found: {this.state.sequence_results_l.length}</span>*/}
+                                    <span
+                                        className="My-Text">Total found: <strong>{this.state.boolean_results_l.length}</strong></span>
                                     <hr/>
+                                    <TimeDiff dataSet={"l"}/>
                                     <div className="row">
-                                        <div className="col-5">
-                                            <ul className="My-table">
-                                                {
-                                                    this.state.boolean_results_l
-                                                        .map(file =>
-                                                            <li className="My-row" key={file.fileId}>{file.fileId}</li>
-                                                        )
-                                                }
-                                            </ul>
-                                        </div>
-                                        <div className="col-5">
-                                            <ul className="My-table">
-                                                {
-                                                    this.state.sequence_results_l
-                                                        .map(file =>
-                                                            <li className="My-row" key={file.fileId}>{file.fileId}</li>
-                                                        )
-                                                }
-                                            </ul>
-                                        </div>
+                                        <form onSubmit={this.printDataL.bind(this)}>
+                                            <button className="Time-button" value="Submit">Print</button>
+                                        </form>
+                                        {this.state.printData_l &&
+                                            <div>
+                                                <ul className="My-table">
+                                                    {
+                                                        this.state.boolean_results_l
+                                                            .map(file =>
+                                                                <li className="My-row"
+                                                                    key={file.fileId}>{file.fileId}</li>
+                                                            )
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
                                     </div>
                                 </div>
                             </div>
