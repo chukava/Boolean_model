@@ -3,16 +3,19 @@ package parser.AST
 import model.File
 
 
-class AndOperator(lo: Expression, ro: Expression, fileIds: MutableSet<File>?) : Expression(fileIds) {
+class AndOperator(lo: Expression, ro: Expression, files: MutableSet<Int>?) : Expression() {
     private val leftOperand: Expression
     private val rightOperand: Expression
+    private val fileIds: MutableSet<Int>?
+
 
     init {
         leftOperand = lo
         rightOperand = ro
+        fileIds = files
     }
 
-    override fun evaluateBoolean(): MutableSet<File>? {
+    override fun evaluateBoolean(): MutableSet<Int>? {
         val leftIds = leftOperand.evaluateBoolean()
         val rightIds = rightOperand.evaluateBoolean()
 
@@ -23,7 +26,7 @@ class AndOperator(lo: Expression, ro: Expression, fileIds: MutableSet<File>?) : 
         return leftIds
     }
 
-    override fun evaluateSequence(): MutableSet<File>? {
+    override fun evaluateSequence(): MutableSet<Int>? {
         val leftIds = leftOperand.evaluateSequence()
         val rightIds = rightOperand.evaluateSequence()
 

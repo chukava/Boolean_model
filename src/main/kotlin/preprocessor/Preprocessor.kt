@@ -18,7 +18,7 @@ class Preprocessor(stopWordsFile: String) {
     private val stopWords: List<String>
     private val pipeline: StanfordCoreNLP
 
-    var fileIds: MutableSet<File> = mutableSetOf()
+    val fileIds: MutableSet<Int> = mutableSetOf()
     val termTable = TermTable()
     val fileTable = FileTable()
 
@@ -46,14 +46,14 @@ class Preprocessor(stopWordsFile: String) {
     fun preprocess(folderName: String) {
         var pathToFile: URL?
         var fileId = 1
-        val stopFiles = if (folderName == "data_S") 201 else 2001
+        val stopFiles = if (folderName == "data_S") 101 else 2001
         val dataSetId = if (folderName == "data_S") "S" else "L"
 
         while (fileId < stopFiles) {
             try {
                 pathToFile = Preprocessor::class.java.classLoader.getResource("$folderName/data_$dataSetId$fileId.txt")
                 preprocessFile(pathToFile.path, fileId)
-                fileIds.add(File(fileId))
+                fileIds.add(fileId)
             } catch (e: Exception) {
                 println("[ERROR] Didn't manage to preprocess file" + "$folderName/data_$dataSetId$fileId.txt")
             }

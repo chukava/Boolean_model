@@ -61,7 +61,7 @@ class SearchService(dataSet: String) {
         println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()
-        return result
+        return toFile(result)
     }
 
     fun sequenceSearch(): MutableSet<File> {
@@ -75,7 +75,13 @@ class SearchService(dataSet: String) {
         println("[INFO] Evaluation finished with time ${time.timeBoolean}")
 
         if (result == null) return mutableSetOf()
-        return result
+        return toFile(result)
+    }
+
+    fun toFile(mutableSet: MutableSet<Int>) : MutableSet<File> {
+        val res = mutableSetOf<File>()
+        mutableSet.forEach{ fileId -> res.add(File(fileId))}
+        return res
     }
 
 }

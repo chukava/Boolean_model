@@ -44,13 +44,15 @@ fun Application.configureCors() {
 
 fun Application.configureRouting() {
     val searchService_S = SearchService("data_S")
-    val searchService_L = SearchService("data_L")
+//    val searchService_L = SearchService("data_L")
 
     routing {
         post("/saveQuery") {
             val query = call.receive<Query>()
 
-            if (searchService_S.setQuery(query) && searchService_L.setQuery(query)) call.respond("Query accepted.")
+            if (searchService_S.setQuery(query)
+//                && searchService_L.setQuery(query)
+            ) call.respond("Query accepted.")
             else call.respond("Bad query syntax.")
 
         }
@@ -63,14 +65,14 @@ fun Application.configureRouting() {
         get("sequence-search/getResult-s") {
             call.respond(searchService_S.sequenceSearch())
         }
-        get("/getTimeDifference-l") {
-            call.respond(searchService_L.getTimeDiff())
-        }
-        get("boolean-model/getResult-l") {
-            call.respond(searchService_L.booleanSearch())
-        }
-        get("sequence-search/getResult-l") {
-            call.respond(searchService_L.sequenceSearch())
-        }
+//        get("/getTimeDifference-l") {
+//            call.respond(searchService_L.getTimeDiff())
+//        }
+//        get("boolean-model/getResult-l") {
+//            call.respond(searchService_L.booleanSearch())
+//        }
+//        get("sequence-search/getResult-l") {
+//            call.respond(searchService_L.sequenceSearch())
+//        }
     }
 }

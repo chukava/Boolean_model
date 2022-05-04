@@ -2,6 +2,7 @@ package parser
 
 import lexer.EToken
 import lexer.Lexer
+import org.apache.commons.lang3.ObjectUtils.clone
 import parser.AST.*
 import preprocessor.Preprocessor
 
@@ -36,7 +37,7 @@ class Parser(_preprocessor: Preprocessor) {
 
         if (currentToken == EToken.OR_OPERATOR) {
             currentToken = lexer.getToken()
-            return OrOperator(leftOperand, exp1(term()), preprocessor.fileIds)
+            return OrOperator(leftOperand, exp1(term()), clone(preprocessor.fileIds))
         }
 
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
@@ -56,7 +57,7 @@ class Parser(_preprocessor: Preprocessor) {
             return leftOperand
         else if (currentToken == EToken.AND_OPERATOR) { // right operand for and expected -> term / left bracket or not expected
             currentToken = lexer.getToken()
-            return AndOperator(leftOperand, term1(factor()), preprocessor.fileIds)
+            return AndOperator(leftOperand, term1(factor()), clone(preprocessor.fileIds))
         }
 
         throw Exception("Bad query. Term: \"${lexer.getCurrentTerm()}\" was not expected!")
@@ -65,7 +66,7 @@ class Parser(_preprocessor: Preprocessor) {
     private fun factor(): Expression { // not & factor1 | factor1
         if (currentToken == EToken.NOT_OPERATOR) { // not -> left bracket | term node
             currentToken = lexer.getToken()
-            return NotOperator(factor1(), preprocessor.fileIds)
+            return NotOperator(factor1(), clone(preprocessor.fileIds))
         } else if (currentToken == EToken.TERM_NODE || currentToken == EToken.LEFT_BRACKET) //  left bracket | term node expected
             return factor1()
 
@@ -78,9 +79,10 @@ class Parser(_preprocessor: Preprocessor) {
             currentToken = lexer.getToken()
             return TermNode(
                 nodeTerm,
-                preprocessor.termTable.getFilesByTerm(nodeTerm),
-                preprocessor.fileIds,
-                preprocessor.fileTable
+                clone(preprocessor.termTable.getFilesByTerm(nodeTerm)),
+                clone(preprocessor.fileIds),
+                preprocessor.fileTable,
+                preprocessor.termTable
             )
         } else if (currentToken == EToken.LEFT_BRACKET) { // left bracket -> expression expected
             currentToken = lexer.getToken()
