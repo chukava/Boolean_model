@@ -1,13 +1,10 @@
 package parser.AST
 
-import model.File
-
 
 class AndOperator(lo: Expression, ro: Expression, files: MutableSet<Int>?) : Expression() {
     private val leftOperand: Expression
     private val rightOperand: Expression
     private val fileIds: MutableSet<Int>?
-
 
     init {
         leftOperand = lo

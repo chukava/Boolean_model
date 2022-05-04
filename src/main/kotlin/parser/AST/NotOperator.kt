@@ -1,7 +1,5 @@
 package parser.AST
 
-import model.File
-
 
 class NotOperator(op: Expression, files: MutableSet<Int>?) : Expression() {
     private val operand: Expression

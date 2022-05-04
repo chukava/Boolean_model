@@ -6,7 +6,6 @@ import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
 import edu.stanford.nlp.ling.CoreLabel
 import edu.stanford.nlp.pipeline.Annotation
 import edu.stanford.nlp.pipeline.StanfordCoreNLP
-import model.File
 import model.FileTable
 import java.io.BufferedReader
 import java.io.FileReader
@@ -46,7 +45,7 @@ class Preprocessor(stopWordsFile: String) {
     fun preprocess(folderName: String) {
         var pathToFile: URL?
         var fileId = 1
-        val stopFiles = if (folderName == "data_S") 101 else 2001
+        val stopFiles = if (folderName == "data_S") 201 else 2001
         val dataSetId = if (folderName == "data_S") "S" else "L"
 
         while (fileId < stopFiles) {

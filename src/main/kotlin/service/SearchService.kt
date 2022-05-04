@@ -8,7 +8,6 @@ import parser.Parser
 import preprocessor.Preprocessor
 
 
-
 class SearchService(dataSet: String) {
     private val preprocessor: Preprocessor
     private val parser: Parser
@@ -78,9 +77,9 @@ class SearchService(dataSet: String) {
         return toFile(result)
     }
 
-    fun toFile(mutableSet: MutableSet<Int>) : MutableSet<File> {
+    fun toFile(mutableSet: MutableSet<Int>): MutableSet<File> {
         val res = mutableSetOf<File>()
-        mutableSet.forEach{ fileId -> res.add(File(fileId))}
+        mutableSet.forEach { fileId -> res.add(File(fileId)) }
         return res
     }
 

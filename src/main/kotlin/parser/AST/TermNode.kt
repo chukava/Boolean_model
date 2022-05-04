@@ -2,8 +2,6 @@ package parser.AST
 
 import model.FileTable
 import model.TermTable
-import org.apache.commons.lang3.ObjectUtils.clone
-
 
 class TermNode(
     term: String,
@@ -19,8 +17,6 @@ class TermNode(
     private val termTable: TermTable
     private val fileIds: MutableSet<Int>?
 
-
-
     init {
         this.term = term
         this.fileTable = fileTable
@@ -29,8 +25,7 @@ class TermNode(
         this.fileIds = files
     }
 
-    override fun evaluateBoolean(): MutableSet<Int>?  =  fileIdsByTerm
-
+    override fun evaluateBoolean(): MutableSet<Int>? = fileIdsByTerm
 
     override fun evaluateSequence(): MutableSet<Int> {
         val results: MutableSet<Int> = mutableSetOf()
